@@ -1,9 +1,25 @@
-import React, { useEffect, useRef } from 'react';
-import { ArrowRight } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { ArrowRight, Code2, Sparkles } from 'lucide-react';
 import { profileData } from '../data/mock';
 
 const HeroSection = () => {
   const floatingRef = useRef(null);
+  const [typedText, setTypedText] = useState('');
+  const fullText = 'Building innovative solutions with code';
+
+  useEffect(() => {
+    let index = 0;
+    const timer = setInterval(() => {
+      if (index <= fullText.length) {
+        setTypedText(fullText.substring(0, index));
+        index++;
+      } else {
+        clearInterval(timer);
+      }
+    }, 100);
+
+    return () => clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
