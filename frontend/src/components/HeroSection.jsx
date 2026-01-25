@@ -45,6 +45,8 @@ const HeroSection = () => {
       >
         <div className="absolute top-1/4 right-1/4 w-32 h-32 border-2 border-cyan-400/30 rounded-lg transform rotate-45 animate-spin-slow" />
         <div className="absolute bottom-1/3 left-1/4 w-24 h-24 border-2 border-teal-400/30 rounded-full animate-bounce-slow" />
+        <div className="absolute top-1/2 right-1/3 w-16 h-16 border-2 border-cyan-400/20 rounded-lg transform -rotate-12" style={{ animation: 'spin-slow 15s linear infinite reverse' }} />
+        <div className="absolute bottom-1/4 right-1/2 w-20 h-20 border border-teal-400/20 rounded-full" style={{ animation: 'bounce-slow 4s ease-in-out infinite' }} />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
