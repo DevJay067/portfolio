@@ -79,11 +79,32 @@ const HeroSection = () => {
             </span>
           </h1>
 
+          {/* Typing animation */}
+          <div className="flex items-center gap-2 text-xl text-cyan-400 font-medium">
+            <Code2 size={24} className="animate-pulse" />
+            <span className="min-h-[30px]">{typedText}</span>
+            <span className="inline-block w-0.5 h-6 bg-cyan-400 animate-pulse" />
+          </div>
+
           <p className="text-lg text-gray-300 leading-relaxed max-w-xl">
             {profileData.description}
           </p>
 
-          <div className="flex flex-wrap gap-4">
+          {/* Tech stack badges */}
+          <div className="flex flex-wrap gap-3">
+            {['React', 'Python', 'AI/ML', 'Full-Stack'].map((tech, index) => (
+              <div
+                key={tech}
+                className="px-4 py-2 bg-black/50 border border-cyan-500/30 rounded-lg text-cyan-400 text-sm font-medium hover:border-cyan-500/50 hover:bg-cyan-500/10 transition-all duration-300 hover:scale-105"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <Sparkles size={14} className="inline mr-2" />
+                {tech}
+              </div>
+            ))}
+          </div>
+
+          <div className="flex flex-wrap gap-4 pt-4">
             <button
               onClick={scrollToContact}
               className="group px-8 py-4 bg-gradient-to-r from-cyan-500 to-teal-500 text-white rounded-full font-medium hover:shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-105 flex items-center gap-2"
