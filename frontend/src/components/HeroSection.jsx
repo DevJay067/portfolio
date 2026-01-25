@@ -54,8 +54,8 @@ const HeroSection = () => {
             {profileData.title}
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
-            {profileData.tagline}
+          <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+            <span className="text-white">Hello, I'm </span>
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400 mt-2">
               {profileData.name}
             </span>
