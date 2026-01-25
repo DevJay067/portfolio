@@ -133,18 +133,13 @@ const HeroSection = () => {
             <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500 to-teal-500 rounded-3xl opacity-20 blur-2xl group-hover:opacity-30 transition-opacity duration-500" />
             
             {/* Card */}
-            <div className="relative bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-xl border border-cyan-500/20 rounded-3xl p-8 transform transition-all duration-500 hover:scale-105 hover:rotate-y-5">
-              <div className="aspect-square rounded-2xl overflow-hidden border-4 border-cyan-500/30 shadow-2xl shadow-cyan-500/20">
+            <div className="relative bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-xl border border-cyan-500/20 rounded-3xl p-6 transform transition-all duration-500 hover:scale-105 hover:rotate-y-5">
+              <div className="aspect-square max-w-sm rounded-2xl overflow-hidden border-4 border-cyan-500/30 shadow-2xl shadow-cyan-500/20">
                 <img
                   src={profileData.profileImage}
                   alt={profileData.name}
                   className="w-full h-full object-cover"
                 />
-              </div>
-              
-              {/* Floating badge */}
-              <div className="absolute -bottom-4 -right-4 px-6 py-3 bg-gradient-to-r from-cyan-500 to-teal-500 text-white rounded-full font-bold text-sm shadow-lg shadow-cyan-500/50 animate-bounce-slow">
-                Available for Work
               </div>
             </div>
           </div>
