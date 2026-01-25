@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Send, Mail, Phone, MapPin, User, MessageSquare } from 'lucide-react';
-import { profileData, references } from '../data/mock';
+import { Send, Mail, Phone, MapPin, User, MessageSquare, Github, Linkedin, Twitter } from 'lucide-react';
+import { profileData } from '../data/mock';
 
 const ContactSection = () => {
   const [isVisible, setIsVisible] = useState(false);
