@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import ParticleBackground from './components/ParticleBackground';
 import GlassNavbar from './components/GlassNavbar';
 import HeroSection from './components/HeroSection';
 import StatsSection from './components/StatsSection';
@@ -13,6 +14,7 @@ import Footer from './components/Footer';
 function App() {
   return (
     <div className="App">
+      <ParticleBackground />
       <GlassNavbar />
       <HeroSection />
       <StatsSection />
