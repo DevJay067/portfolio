@@ -131,26 +131,50 @@ const ContactSection = () => {
               </div>
             </div>
 
-            {/* References */}
-            <div className="space-y-4">
-              <h3 className="text-xl font-bold text-white">References</h3>
-              <div className="grid grid-cols-2 gap-4">
-                {references.map((ref, index) => (
-                  <div
-                    key={index}
-                    className="relative bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-xl border border-cyan-500/20 rounded-xl p-4 hover:border-cyan-500/50 transition-all duration-300 hover:transform hover:scale-105"
-                  >
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-teal-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
-                        {ref.initials}
-                      </div>
-                      <h4 className="text-white font-semibold text-sm">{ref.name}</h4>
-                    </div>
-                    <p className="text-gray-400 text-xs mb-1">{ref.phone}</p>
-                    <p className="text-gray-400 text-xs">{ref.email}</p>
+            {/* Social Links */}
+            <div className="space-y-4 mt-8">
+              <h3 className="text-xl font-bold text-white">Connect With Me</h3>
+              <div className="flex gap-4">
+                <a
+                  href="#"
+                  className="group relative p-4 bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-xl border border-cyan-500/20 rounded-xl hover:border-cyan-500/50 transition-all duration-300 hover:transform hover:scale-110 flex-1"
+                >
+                  <div className="flex flex-col items-center gap-2">
+                    <Github className="text-cyan-400 group-hover:text-cyan-300" size={28} />
+                    <span className="text-gray-400 text-sm group-hover:text-white transition-colors duration-300">Github</span>
                   </div>
-                ))}
+                </a>
+                <a
+                  href="#"
+                  className="group relative p-4 bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-xl border border-cyan-500/20 rounded-xl hover:border-cyan-500/50 transition-all duration-300 hover:transform hover:scale-110 flex-1"
+                >
+                  <div className="flex flex-col items-center gap-2">
+                    <Linkedin className="text-cyan-400 group-hover:text-cyan-300" size={28} />
+                    <span className="text-gray-400 text-sm group-hover:text-white transition-colors duration-300">LinkedIn</span>
+                  </div>
+                </a>
+                <a
+                  href="#"
+                  className="group relative p-4 bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-xl border border-cyan-500/20 rounded-xl hover:border-cyan-500/50 transition-all duration-300 hover:transform hover:scale-110 flex-1"
+                >
+                  <div className="flex flex-col items-center gap-2">
+                    <Twitter className="text-cyan-400 group-hover:text-cyan-300" size={28} />
+                    <span className="text-gray-400 text-sm group-hover:text-white transition-colors duration-300">Twitter</span>
+                  </div>
+                </a>
               </div>
+            </div>
+
+            {/* Fun fact card */}
+            <div className="relative mt-8 bg-gradient-to-br from-cyan-500/10 to-teal-500/10 backdrop-blur-xl border border-cyan-500/30 rounded-xl p-6">
+              <div className="absolute -top-3 -right-3 w-6 h-6 bg-gradient-to-r from-cyan-500 to-teal-500 rounded-full animate-pulse" />
+              <h4 className="text-white font-semibold mb-2 flex items-center gap-2">
+                <span className="text-2xl">💡</span>
+                Quick Response
+              </h4>
+              <p className="text-gray-300 text-sm">
+                I typically respond to messages within 24 hours. Let's build something amazing together!
+              </p>
             </div>
           </div>
 
