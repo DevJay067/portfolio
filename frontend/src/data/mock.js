@@ -4,7 +4,7 @@ export const profileData = {
   name: "Jay Magar",
   title: "Computer Engineering Student",
   tagline: "Hello, myself Jay Magar",
-  description: "Fresher, eager computer engineering student searching for an entry-level software developer position to utilize programming expertise and grow by contributing to practical projects.",
+  description: "Passionate computer engineering student specializing in web development, AI/ML systems, and building innovative solutions. Dedicated to mastering modern technologies and creating impactful projects.",
   email: "jaymagar310@gmail.com",
   phone: "7498198688",
   location: "Spine road, sec-19/20, Chikhali, Pune, 411062",
