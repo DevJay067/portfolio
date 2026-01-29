@@ -198,22 +198,15 @@ const HeroSection = () => {
                 <img
                   src={profileData.profileImage}
                   alt={profileData.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center"
                   style={{ 
-                    maxWidth: '400px',
-                    aspectRatio: '1/1',
-                    objectPosition: 'center 20%'
+                    width: '400px',
+                    height: '400px'
                   }}
                 />
 
                 {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-              </div>
-
-              {/* Floating status indicator */}
-              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-6 py-2 bg-gradient-to-r from-cyan-500 to-teal-500 text-white rounded-full font-semibold text-sm shadow-lg shadow-cyan-500/50 flex items-center gap-2 animate-bounce-slow">
-                <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
-                Open to Collaborate
               </div>
             </div>
           </div>
