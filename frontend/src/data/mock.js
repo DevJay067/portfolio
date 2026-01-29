@@ -22,17 +22,17 @@ export const aboutHighlights = [
   {
     title: "Multiple Academic Projects",
     year: "2025",
-    description: "Successfully completed multiple academic projects in web development"
+    description: "Successfully built and deployed multiple web applications showcasing modern development practices"
   },
   {
     title: "Technical Recognition",
     year: "2025",
-    description: "Recognized for consistent project completion and technical learning"
+    description: "Recognized for consistent project delivery and innovative technical solutions"
   },
   {
     title: "Full-Stack Development",
     year: "2025 - Present",
-    description: "Actively improved skills in full-stack development and databases"
+    description: "Actively mastering full-stack development, databases, and modern web frameworks"
   }
 ];
 
