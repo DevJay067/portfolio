@@ -13,7 +13,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative bg-black border-t border-cyan-500/20 overflow-hidden">
+    <footer className="relative bg-black dark:bg-black border-t border-cyan-500/20 overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-t from-cyan-500/5 to-transparent pointer-events-none" />
 
