@@ -103,32 +103,6 @@ const ContactSection = () => {
                   </div>
                 </div>
               </div>
-
-              <div className="group relative bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-xl border border-cyan-500/20 rounded-xl p-6 hover:border-cyan-500/50 transition-all duration-300 hover:transform hover:scale-105">
-                <div className="flex items-center gap-4">
-                  <div className="p-3 bg-cyan-500/10 rounded-lg group-hover:bg-cyan-500/20 transition-colors duration-300">
-                    <Phone className="text-cyan-400" size={24} />
-                  </div>
-                  <div>
-                    <h3 className="text-white font-semibold mb-1">Phone</h3>
-                    <a href={`tel:${profileData.phone}`} className="text-gray-400 hover:text-cyan-400 transition-colors duration-300">
-                      {profileData.phone}
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="group relative bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-xl border border-cyan-500/20 rounded-xl p-6 hover:border-cyan-500/50 transition-all duration-300 hover:transform hover:scale-105">
-                <div className="flex items-center gap-4">
-                  <div className="p-3 bg-cyan-500/10 rounded-lg group-hover:bg-cyan-500/20 transition-colors duration-300">
-                    <MapPin className="text-cyan-400" size={24} />
-                  </div>
-                  <div>
-                    <h3 className="text-white font-semibold mb-1">Location</h3>
-                    <p className="text-gray-400">{profileData.location}</p>
-                  </div>
-                </div>
-              </div>
             </div>
 
             {/* Social Links */}
@@ -136,7 +110,9 @@ const ContactSection = () => {
               <h3 className="text-xl font-bold text-white">Connect With Me</h3>
               <div className="flex gap-4">
                 <a
-                  href="#"
+                  href="https://github.com/DevJay067"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group relative p-4 bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-xl border border-cyan-500/20 rounded-xl hover:border-cyan-500/50 transition-all duration-300 hover:transform hover:scale-110 flex-1"
                 >
                   <div className="flex flex-col items-center gap-2">
@@ -145,21 +121,14 @@ const ContactSection = () => {
                   </div>
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/jay-magar-5ba92b369/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group relative p-4 bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-xl border border-cyan-500/20 rounded-xl hover:border-cyan-500/50 transition-all duration-300 hover:transform hover:scale-110 flex-1"
                 >
                   <div className="flex flex-col items-center gap-2">
                     <Linkedin className="text-cyan-400 group-hover:text-cyan-300" size={28} />
                     <span className="text-gray-400 text-sm group-hover:text-white transition-colors duration-300">LinkedIn</span>
-                  </div>
-                </a>
-                <a
-                  href="#"
-                  className="group relative p-4 bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-xl border border-cyan-500/20 rounded-xl hover:border-cyan-500/50 transition-all duration-300 hover:transform hover:scale-110 flex-1"
-                >
-                  <div className="flex flex-col items-center gap-2">
-                    <Twitter className="text-cyan-400 group-hover:text-cyan-300" size={28} />
-                    <span className="text-gray-400 text-sm group-hover:text-white transition-colors duration-300">Twitter</span>
                   </div>
                 </a>
               </div>
