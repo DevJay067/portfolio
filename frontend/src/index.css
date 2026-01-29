@@ -102,7 +102,7 @@ code {
 
 /* Light mode overrides */
 .light {
-  background: linear-gradient(to bottom, #f8fafc, #e0f2fe, #dbeafe);
+  background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 25%, #fef3c7 50%, #fce7f3 75%, #e0e7ff 100%) !important;
 }
 
 .light .App-header,
@@ -115,90 +115,122 @@ code {
 .light h2,
 .light h3,
 .light h4 {
-  color: #0f172a !important;
+  color: #1e293b !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .light p:not(.text-cyan-400):not(.text-teal-400),
-.light span:not(.text-cyan-400):not(.text-teal-400):not(.bg-clip-text) {
-  color: #334155 !important;
+.light span:not(.text-cyan-400):not(.text-teal-400):not(.bg-clip-text),
+.light li {
+  color: #475569 !important;
 }
 
 .light .text-white {
-  color: #0f172a !important;
+  color: #1e293b !important;
 }
 
 .light .text-gray-300,
 .light .text-gray-400,
 .light .text-gray-500 {
-  color: #475569 !important;
+  color: #64748b !important;
 }
 
 /* Light mode backgrounds */
 .light .bg-black {
-  background: #ffffff !important;
+  background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%) !important;
 }
 
 .light .bg-gray-900 {
-  background: #f1f5f9 !important;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important;
 }
 
 .light .bg-gray-900\/50,
 .light .bg-gray-900\/60,
 .light .bg-gray-900\/80 {
-  background: rgba(255, 255, 255, 0.8) !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(6, 182, 212, 0.3) !important;
 }
 
 .light .bg-black\/50,
 .light .bg-black\/80 {
-  background: rgba(255, 255, 255, 0.9) !important;
+  background: rgba(255, 255, 255, 0.98) !important;
+  border: 1px solid rgba(6, 182, 212, 0.3) !important;
+}
+
+.light .bg-cyan-500\/10 {
+  background: rgba(6, 182, 212, 0.15) !important;
+}
+
+.light .bg-cyan-500\/20 {
+  background: rgba(6, 182, 212, 0.2) !important;
 }
 
 /* Light mode borders */
 .light .border-cyan-500\/10,
-.light .border-cyan-500\/20,
-.light .border-cyan-500\/30 {
-  border-color: rgba(6, 182, 212, 0.4) !important;
+.light .border-cyan-500\/20 {
+  border-color: rgba(6, 182, 212, 0.5) !important;
+}
+
+.light .border-cyan-500\/30,
+.light .border-cyan-500\/40 {
+  border-color: rgba(6, 182, 212, 0.6) !important;
 }
 
 .light .border-cyan-500\/50 {
-  border-color: rgba(6, 182, 212, 0.6) !important;
+  border-color: rgba(6, 182, 212, 0.7) !important;
+}
+
+.light .border-teal-400 {
+  border-color: rgba(20, 184, 166, 0.7) !important;
+}
+
+.light .border-cyan-400 {
+  border-color: rgba(34, 211, 238, 0.7) !important;
 }
 
 /* Light mode glass effect */
 .light nav {
-  background: rgba(255, 255, 255, 0.7) !important;
+  background: rgba(255, 255, 255, 0.85) !important;
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(6, 182, 212, 0.2) !important;
+  border-bottom: 1px solid rgba(6, 182, 212, 0.3) !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05) !important;
 }
 
 /* Light mode shadows */
 .light .shadow-lg {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(6, 182, 212, 0.15) !important;
 }
 
 .light .shadow-2xl {
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15), 0 10px 30px rgba(6, 182, 212, 0.2) !important;
 }
 
 .light .shadow-cyan-500\/50,
 .light .shadow-cyan-500\/30,
 .light .shadow-cyan-500\/20 {
-  box-shadow: 0 10px 30px rgba(6, 182, 212, 0.3) !important;
+  box-shadow: 0 15px 40px rgba(6, 182, 212, 0.4) !important;
 }
 
 /* Light mode gradient backgrounds */
-.light .bg-gradient-to-br,
-.light .bg-gradient-to-t,
+.light .bg-gradient-to-br {
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.98), rgba(240, 249, 255, 0.98)) !important;
+}
+
+.light .bg-gradient-to-t {
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.98), rgba(240, 249, 255, 0.98)) !important;
+}
+
 .light .bg-gradient-to-b {
-  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95), rgba(240, 249, 255, 0.95)) !important;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.98), rgba(240, 249, 255, 0.98)) !important;
 }
 
 /* Light mode input fields */
 .light input,
 .light textarea {
-  background: #f8fafc !important;
-  border-color: rgba(6, 182, 212, 0.4) !important;
-  color: #0f172a !important;
+  background: #ffffff !important;
+  border: 2px solid rgba(6, 182, 212, 0.5) !important;
+  color: #1e293b !important;
+  box-shadow: 0 2px 8px rgba(6, 182, 212, 0.1) !important;
 }
 
 .light input::placeholder,
@@ -208,41 +240,88 @@ code {
 
 .light input:focus,
 .light textarea:focus {
-  border-color: rgba(6, 182, 212, 0.8) !important;
+  border-color: rgba(6, 182, 212, 0.9) !important;
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.25) !important;
 }
 
 /* Light mode cards and panels */
 .light .backdrop-blur-xl,
 .light .backdrop-blur-2xl {
-  background: rgba(255, 255, 255, 0.85) !important;
+  background: rgba(255, 255, 255, 0.95) !important;
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(6, 182, 212, 0.3) !important;
+  border: 2px solid rgba(6, 182, 212, 0.4) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(6, 182, 212, 0.15) !important;
 }
 
 /* Light mode particle background */
 .light canvas {
-  opacity: 0.15 !important;
+  opacity: 0.08 !important;
+  mix-blend-mode: multiply !important;
 }
 
 /* Light mode hover effects */
 .light .hover\:bg-cyan-500\/10:hover {
-  background: rgba(6, 182, 212, 0.15) !important;
+  background: rgba(6, 182, 212, 0.2) !important;
 }
 
 .light .hover\:bg-cyan-500\/20:hover {
-  background: rgba(6, 182, 212, 0.2) !important;
+  background: rgba(6, 182, 212, 0.3) !important;
 }
 
 /* Light mode glowing effects */
 .light .blur-2xl,
 .light .blur-3xl {
-  opacity: 0.15 !important;
+  opacity: 0.25 !important;
+}
+
+/* Light mode decorative elements */
+.light .border-t-2,
+.light .border-b-2,
+.light .border-l-2,
+.light .border-r-2 {
+  border-width: 3px !important;
+  opacity: 0.9 !important;
 }
 
 /* Light mode footer */
 .light footer {
-  background: rgba(255, 255, 255, 0.8) !important;
-  border-top: 1px solid rgba(6, 182, 212, 0.3) !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-top: 2px solid rgba(6, 182, 212, 0.4) !important;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Light mode skill cards and progress bars */
+.light .bg-gray-800 {
+  background: linear-gradient(90deg, rgba(6, 182, 212, 0.8), rgba(20, 184, 166, 0.8)) !important;
+}
+
+/* Light mode hero section improvements */
+.light #home {
+  background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 25%, #fef3c7 50%, #fce7f3 75%, #e0e7ff 100%) !important;
+}
+
+/* Light mode stats section */
+.light .text-transparent {
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* Light mode project cards */
+.light .relative.group img {
+  filter: brightness(1.05) contrast(1.05) !important;
+}
+
+/* Light mode button improvements */
+.light button:not(.bg-gradient-to-r),
+.light a.border-2 {
+  border-width: 2px !important;
+  border-color: rgba(6, 182, 212, 0.7) !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+.light button:not(.bg-gradient-to-r):hover,
+.light a.border-2:hover {
+  background: rgba(6, 182, 212, 0.15) !important;
+  border-color: rgba(6, 182, 212, 0.9) !important;
 }
 
 @layer base {
