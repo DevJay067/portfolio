@@ -12,8 +12,8 @@ export const profileData = {
 };
 
 export const stats = [
-  { label: "Projects", value: "10+" },
-  { label: "Technologies", value: "15+" },
+  { label: "Projects", value: "6+" },
+  { label: "Technologies", value: "9" },
   { label: "In Progress", value: "2" },
   { label: "Achievements", value: "3" }
 ];
