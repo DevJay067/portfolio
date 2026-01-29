@@ -46,6 +46,32 @@ code {
         --chart-5: 27 87% 67%;
         --radius: 0.5rem;
     }
+    .light {
+        --background: 0 0% 100%;
+        --foreground: 0 0% 3.9%;
+        --card: 0 0% 100%;
+        --card-foreground: 0 0% 3.9%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 0 0% 3.9%;
+        --primary: 0 0% 9%;
+        --primary-foreground: 0 0% 98%;
+        --secondary: 0 0% 96.1%;
+        --secondary-foreground: 0 0% 9%;
+        --muted: 0 0% 96.1%;
+        --muted-foreground: 0 0% 45.1%;
+        --accent: 0 0% 96.1%;
+        --accent-foreground: 0 0% 9%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 0 0% 89.8%;
+        --input: 0 0% 89.8%;
+        --ring: 0 0% 3.9%;
+        --chart-1: 12 76% 61%;
+        --chart-2: 173 58% 39%;
+        --chart-3: 197 37% 24%;
+        --chart-4: 43 74% 66%;
+        --chart-5: 27 87% 67%;
+    }
     .dark {
         --background: 0 0% 3.9%;
         --foreground: 0 0% 98%;
@@ -72,6 +98,39 @@ code {
         --chart-4: 280 65% 60%;
         --chart-5: 340 75% 55%;
     }
+}
+
+/* Light mode overrides */
+.light {
+  background: linear-gradient(to bottom, #ffffff, #f3f4f6);
+}
+
+.light .App-header,
+.light section {
+  background: transparent !important;
+}
+
+.light h1,
+.light h2,
+.light h3,
+.light h4,
+.light p,
+.light span:not(.text-cyan-400):not(.text-teal-400) {
+  color: #1f2937 !important;
+}
+
+.light .text-gray-300,
+.light .text-gray-400 {
+  color: #4b5563 !important;
+}
+
+.light .bg-black,
+.light .bg-gray-900 {
+  background: white !important;
+}
+
+.light .border-cyan-500\/20 {
+  border-color: rgba(6, 182, 212, 0.3) !important;
 }
 
 @layer base {
