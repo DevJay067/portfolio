@@ -157,17 +157,55 @@ const HeroSection = () => {
         {/* 3D Profile Card */}
         <div className="relative animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           <div className="relative group perspective-1000">
+            {/* Animated rings */}
+            <div className="absolute inset-0 -z-10">
+              <div className="absolute inset-0 rounded-full border-2 border-cyan-500/20 animate-ping" style={{ animationDuration: '3s' }} />
+              <div className="absolute inset-8 rounded-full border-2 border-teal-500/20 animate-ping" style={{ animationDuration: '4s', animationDelay: '1s' }} />
+            </div>
+
             {/* Glowing effect */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500 to-teal-500 rounded-3xl opacity-20 blur-2xl group-hover:opacity-30 transition-opacity duration-500" />
+            <div className="absolute -inset-8 bg-gradient-to-r from-cyan-500 to-teal-500 rounded-full opacity-20 blur-3xl group-hover:opacity-40 transition-opacity duration-700 animate-pulse" />
             
             {/* Card */}
-            <div className="relative bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-xl border border-cyan-500/20 rounded-3xl p-6 transform transition-all duration-500 hover:scale-105 hover:rotate-y-5">
-              <div className="aspect-square max-w-sm rounded-2xl overflow-hidden border-4 border-cyan-500/30 shadow-2xl shadow-cyan-500/20">
+            <div 
+              ref={imageRef}
+              className="relative bg-gradient-to-br from-gray-900/60 to-black/60 backdrop-blur-2xl border-2 border-cyan-500/30 rounded-3xl p-4 transition-all duration-300 ease-out"
+              style={{
+                transformStyle: 'preserve-3d',
+                willChange: 'transform'
+              }}
+            >
+              {/* Decorative corners */}
+              <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-cyan-400 rounded-tl-xl" />
+              <div className="absolute -top-2 -right-2 w-8 h-8 border-t-2 border-r-2 border-teal-400 rounded-tr-xl" />
+              <div className="absolute -bottom-2 -left-2 w-8 h-8 border-b-2 border-l-2 border-teal-400 rounded-bl-xl" />
+              <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-cyan-400 rounded-br-xl" />
+
+              <div className="relative rounded-2xl overflow-hidden border-4 border-cyan-500/40 shadow-2xl shadow-cyan-500/30">
+                {/* Scan line effect */}
+                <div className="absolute inset-0 z-10 pointer-events-none">
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-500/10 to-transparent animate-scan" />
+                </div>
+
                 <img
                   src={profileData.profileImage}
                   alt={profileData.name}
                   className="w-full h-full object-cover"
+                  style={{ 
+                    maxWidth: '400px',
+                    aspectRatio: '1/1',
+                    objectPosition: 'center 20%'
+                  }}
                 />
+
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+              </div>
+
+              {/* Floating status indicator */}
+              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-6 py-2 bg-gradient-to-r from-cyan-500 to-teal-500 text-white rounded-full font-semibold text-sm shadow-lg shadow-cyan-500/50 flex items-center gap-2 animate-bounce-slow">
+                <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
+                Open to Collaborate
               </div>
             </div>
           </div>
