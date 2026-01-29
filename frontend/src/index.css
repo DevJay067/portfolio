@@ -305,19 +305,29 @@ code {
   -webkit-text-fill-color: transparent !important;
 }
 
-/* Light mode images - IMPORTANT FIX */
+/* Light mode images - CRITICAL FIX */
 .light img {
   opacity: 1 !important;
-  filter: brightness(1) contrast(1) !important;
+  filter: none !important;
+  display: block !important;
+  visibility: visible !important;
 }
 
-/* Light mode project images */
-.light .relative.group img {
-  opacity: 1 !important;
-  filter: brightness(1) contrast(1.05) !important;
+/* Remove gradient overlays on images in light mode */
+.light .absolute.inset-0.bg-gradient-to-t {
+  display: none !important;
 }
 
-/* Light mode profile image and all images */
+.light .absolute.inset-0.bg-gradient-to-b {
+  display: none !important;
+}
+
+/* Hide scan line effect in light mode */
+.light .animate-scan {
+  display: none !important;
+}
+
+/* Ensure all image containers are visible */
 .light [src*="customer-assets"],
 .light [src*="unsplash"],
 .light [src*="http"] {
@@ -325,6 +335,19 @@ code {
   filter: none !important;
   display: block !important;
   visibility: visible !important;
+  mix-blend-mode: normal !important;
+}
+
+/* Light mode project images */
+.light .relative.group img {
+  opacity: 1 !important;
+  filter: none !important;
+  display: block !important;
+}
+
+/* Remove any overlays on images in light mode */
+.light img + .absolute {
+  opacity: 0 !important;
 }
 
 /* Light mode button improvements */
