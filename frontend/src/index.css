@@ -102,7 +102,7 @@ code {
 
 /* Light mode overrides */
 .light {
-  background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 25%, #fef3c7 50%, #fce7f3 75%, #e0e7ff 100%) !important;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 50%, #e0f2fe 100%) !important;
 }
 
 .light .App-header,
@@ -297,7 +297,7 @@ code {
 
 /* Light mode hero section improvements */
 .light #home {
-  background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 25%, #fef3c7 50%, #fce7f3 75%, #e0e7ff 100%) !important;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 50%, #e0f2fe 100%) !important;
 }
 
 /* Light mode stats section */
@@ -305,9 +305,26 @@ code {
   -webkit-text-fill-color: transparent !important;
 }
 
-/* Light mode project cards */
+/* Light mode images - IMPORTANT FIX */
+.light img {
+  opacity: 1 !important;
+  filter: brightness(1) contrast(1) !important;
+}
+
+/* Light mode project images */
 .light .relative.group img {
-  filter: brightness(1.05) contrast(1.05) !important;
+  opacity: 1 !important;
+  filter: brightness(1) contrast(1.05) !important;
+}
+
+/* Light mode profile image and all images */
+.light [src*="customer-assets"],
+.light [src*="unsplash"],
+.light [src*="http"] {
+  opacity: 1 !important;
+  filter: none !important;
+  display: block !important;
+  visibility: visible !important;
 }
 
 /* Light mode button improvements */
