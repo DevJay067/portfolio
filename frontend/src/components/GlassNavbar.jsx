@@ -43,7 +43,7 @@ const GlassNavbar = () => {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? 'backdrop-blur-xl bg-black/30 shadow-lg shadow-cyan-500/10'
+            ? 'backdrop-blur-xl bg-black/30 dark:bg-black/30 shadow-lg shadow-cyan-500/10'
             : 'bg-transparent'
         }`}
         style={{
