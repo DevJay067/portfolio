@@ -137,6 +137,23 @@ vercel --prod
 
 This portfolio doesn't require any environment variables for deployment.
 
+### Troubleshooting
+
+**404 Error on Vercel?**
+1. Make sure you set **Root Directory** to `frontend` in Vercel project settings
+2. Verify Framework Preset is set to "Create React App"
+3. Check Build Output Directory is set to `build`
+4. Redeploy after making these changes
+
+**Build Failing?**
+1. Ensure all dependencies are in `package.json`
+2. Check that `yarn.lock` is committed to git
+3. Verify Node.js version compatibility (16.x or higher)
+
+**Images Not Loading?**
+- Verify all image URLs are accessible
+- Check browser console for CORS errors
+
 ## Project Structure
 
 ```
