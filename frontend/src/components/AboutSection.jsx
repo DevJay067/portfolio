@@ -60,13 +60,13 @@ const AboutSection = () => {
           >
             <div className="relative bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-white mb-4">
-                Passionate About Building Innovative Solutions
+                Passionate About Technology & Innovation
               </h3>
               <p className="text-gray-300 leading-relaxed mb-6">
                 {profileData.description}
               </p>
               <p className="text-gray-300 leading-relaxed">
-                Currently pursuing B-Tech in Computer Engineering at NMIET, I'm dedicated to mastering modern web technologies and AI/ML systems. My journey in software development is driven by curiosity and a commitment to writing clean, efficient code.
+                Currently pursuing B-Tech in Computer Engineering at NMIET, I'm dedicated to mastering modern web technologies and AI/ML systems. My journey in software development is driven by curiosity, creativity, and a commitment to building solutions that matter.
               </p>
 
               {/* Contact info */}
