@@ -27,25 +27,22 @@ const Footer = () => {
             </p>
             <div className="flex gap-3">
               <a
-                href="#"
+                href="https://github.com/DevJay067"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 bg-cyan-500/10 rounded-lg hover:bg-cyan-500/20 text-cyan-400 hover:text-cyan-300 transition-all duration-300 hover:scale-110"
                 aria-label="Github"
               >
                 <Github size={20} />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/jay-magar-5ba92b369/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 bg-cyan-500/10 rounded-lg hover:bg-cyan-500/20 text-cyan-400 hover:text-cyan-300 transition-all duration-300 hover:scale-110"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={20} />
-              </a>
-              <a
-                href="#"
-                className="p-2 bg-cyan-500/10 rounded-lg hover:bg-cyan-500/20 text-cyan-400 hover:text-cyan-300 transition-all duration-300 hover:scale-110"
-                aria-label="Twitter"
-              >
-                <Twitter size={20} />
               </a>
               <a
                 href={`mailto:${profileData.email}`}
