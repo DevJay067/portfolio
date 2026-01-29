@@ -169,7 +169,7 @@ const HeroSection = () => {
             {/* Card */}
             <div 
               ref={imageRef}
-              className="relative bg-gradient-to-br from-gray-900/60 to-black/60 backdrop-blur-2xl border-2 border-cyan-500/30 rounded-3xl p-4 transition-all duration-300 ease-out"
+              className="relative bg-gradient-to-br from-gray-900/60 to-black/60 backdrop-blur-2xl border-2 border-cyan-500/30 rounded-3xl p-2 transition-all duration-300 ease-out"
               style={{
                 transformStyle: 'preserve-3d',
                 willChange: 'transform'
