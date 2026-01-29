@@ -83,11 +83,13 @@ uvicorn server:app --reload --port 8001
 
 ### Prerequisites
 - Vercel account
-- GitHub repository (optional but recommended)
+- GitHub repository (recommended)
 
 ### Steps
 
-1. **Push your code to GitHub** (recommended)
+#### Method 1: Using Vercel Dashboard (Easiest)
+
+1. **Push your code to GitHub**
 ```bash
 git init
 git add .
@@ -96,39 +98,44 @@ git remote add origin <your-github-repo-url>
 git push -u origin main
 ```
 
-2. **Deploy to Vercel**
-
-**Option A: Using Vercel Dashboard (Recommended)**
-- Go to [vercel.com](https://vercel.com)
+2. **Deploy on Vercel**
+- Go to [vercel.com](https://vercel.com) and sign in
 - Click "Add New Project"
 - Import your GitHub repository
-- Vercel will auto-detect it's a Create React App
-- Set the root directory to `frontend`
+- **Important**: Set Root Directory to `frontend`
+- Framework Preset: Create React App (auto-detected)
 - Click "Deploy"
 
-**Option B: Using Vercel CLI**
-```bash
-npm i -g vercel
-cd frontend
-vercel
-```
+That's it! Your portfolio will be live in minutes.
 
-For production deployment:
+#### Method 2: Using Vercel CLI
+
 ```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Navigate to frontend folder
+cd frontend
+
+# Login and deploy
+vercel login
+vercel
+
+# For production
 vercel --prod
 ```
 
 ### Important Notes
 
-- The portfolio is **frontend-only** (no backend required)
-- Contact form is currently MOCKED (shows alerts, doesn't save to database)
-- All project links are working (HealthChain AI, EOD Rover)
-- Theme switching (dark/light mode) works perfectly
-- The `vercel.json` is configured for client-side routing
+- This is a **frontend-only** portfolio (no backend)
+- Contact form is MOCKED (displays alerts, doesn't save data)
+- All social and project links are functional
+- Dark/Light mode theme switcher works perfectly
+- The `vercel.json` in frontend folder handles client-side routing
 
-### Environment Variables
+### No Environment Variables Needed
 
-No environment variables needed for basic deployment since backend URL is not used in current implementation.
+This portfolio doesn't require any environment variables for deployment.
 
 ## Project Structure
 
