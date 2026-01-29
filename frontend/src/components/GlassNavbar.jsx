@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 import { navLinks } from '../data/mock';
+import { useTheme } from '../context/ThemeContext';
 
 const GlassNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
