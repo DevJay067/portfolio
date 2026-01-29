@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ArrowRight, Code2, Sparkles, Download } from 'lucide-react';
+import { ArrowRight, Code2, Sparkles } from 'lucide-react';
 import { profileData } from '../data/mock';
 
 const HeroSection = () => {
