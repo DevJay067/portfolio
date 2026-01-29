@@ -63,6 +63,10 @@
   animation: scroll 1.5s ease-in-out infinite;
 }
 
+.animate-scan {
+  animation: scan 3s ease-in-out infinite;
+}
+
 /* 3D perspective utilities */
 .perspective-1000 {
   perspective: 1000px;
