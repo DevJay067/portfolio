@@ -83,27 +83,33 @@ uvicorn server:app --reload --port 8001
 
 ### Prerequisites
 - Vercel account
-- MongoDB Atlas account (for production database)
+- GitHub repository (optional but recommended)
 
 ### Steps
 
-1. Install Vercel CLI
+1. **Push your code to GitHub** (recommended)
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin <your-github-repo-url>
+git push -u origin main
+```
+
+2. **Deploy to Vercel**
+
+**Option A: Using Vercel Dashboard (Recommended)**
+- Go to [vercel.com](https://vercel.com)
+- Click "Add New Project"
+- Import your GitHub repository
+- Vercel will auto-detect it's a Create React App
+- Set the root directory to `frontend`
+- Click "Deploy"
+
+**Option B: Using Vercel CLI**
 ```bash
 npm i -g vercel
-```
-
-2. Login to Vercel
-```bash
-vercel login
-```
-
-3. Set up environment variables in Vercel dashboard:
-   - `MONGO_URL` - Your MongoDB Atlas connection string
-   - `DB_NAME` - Your database name
-   - `REACT_APP_BACKEND_URL` - Your Vercel backend URL
-
-4. Deploy
-```bash
+cd frontend
 vercel
 ```
 
@@ -114,10 +120,15 @@ vercel --prod
 
 ### Important Notes
 
-- The `vercel.json` file is already configured for deployment
-- Frontend will be deployed as a static site
-- Backend will be deployed as serverless functions
-- Make sure to update MongoDB connection string to use MongoDB Atlas for production
+- The portfolio is **frontend-only** (no backend required)
+- Contact form is currently MOCKED (shows alerts, doesn't save to database)
+- All project links are working (HealthChain AI, EOD Rover)
+- Theme switching (dark/light mode) works perfectly
+- The `vercel.json` is configured for client-side routing
+
+### Environment Variables
+
+No environment variables needed for basic deployment since backend URL is not used in current implementation.
 
 ## Project Structure
 
