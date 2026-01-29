@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "jay-magar-portfolio",
   "builds": [
     {
       "src": "frontend/package.json",
@@ -8,28 +7,24 @@
       "config": {
         "distDir": "build"
       }
-    },
-    {
-      "src": "backend/server.py",
-      "use": "@vercel/python"
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "backend/server.py"
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/manifest.json",
+      "dest": "/manifest.json"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/favicon.ico"
     },
     {
       "src": "/(.*)",
-      "dest": "frontend/$1"
+      "dest": "/index.html"
     }
-  ],
-  "env": {
-    "REACT_APP_BACKEND_URL": "@react_app_backend_url"
-  },
-  "build": {
-    "env": {
-      "REACT_APP_BACKEND_URL": "@react_app_backend_url"
-    }
-  }
+  ]
 }
