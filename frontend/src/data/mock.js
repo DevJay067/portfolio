@@ -69,24 +69,24 @@ export const projects = [
       "Built responsive frontend with React",
       "Integrated secure database connectivity"
     ],
-    liveDemo: "#",
-    github: "#"
+    liveDemo: "https://healthchainfinal.netlify.app/",
+    github: "https://github.com/DevJay067"
   },
   {
     id: 2,
-    title: "Cloud Vault System",
-    description: "Secure cloud-based file storage solution with encryption and user management",
+    title: "EOD Rover",
+    description: "Advanced robotics project for explosive ordnance disposal with autonomous navigation and real-time control systems",
     image: "https://images.unsplash.com/photo-1506399558188-acca6f8cbf41?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwxfHxjbG91ZCUyMHN0b3JhZ2V8ZW58MHx8fHwxNzY5MzY3NzUzfDA&ixlib=rb-4.1.0&q=85",
-    technologies: ["React", "Vite", "SQL", "Security"],
-    status: "Currently Working",
+    technologies: ["Robotics", "IoT", "Python", "Hardware"],
+    status: "In Progress",
     year: "2025",
     highlights: [
-      "Implementing end-to-end encryption",
-      "Building secure authentication system",
-      "Developing file management interface"
+      "Developing autonomous navigation system",
+      "Building real-time control interface",
+      "Implementing safety mechanisms and sensors"
     ],
     liveDemo: "#",
-    github: "#"
+    github: "https://github.com/DevJay067"
   }
 ];
 
