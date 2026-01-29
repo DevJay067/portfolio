@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Send, Mail, Phone, MapPin, User, MessageSquare, Github, Linkedin, Twitter } from 'lucide-react';
+import { Send, Mail, User, MessageSquare, Github, Linkedin } from 'lucide-react';
 import { profileData } from '../data/mock';
 
 const ContactSection = () => {
