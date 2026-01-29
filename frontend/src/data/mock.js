@@ -85,7 +85,7 @@ export const projects = [
       "Built real-time control interface",
       "Implemented safety mechanisms and sensors"
     ],
-    liveDemo: "#",
+    liveDemo: "https://jaymagar067.wixstudio.com/my-site",
     github: "https://github.com/DevJay067"
   }
 ];
