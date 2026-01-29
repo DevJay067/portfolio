@@ -102,7 +102,7 @@ code {
 
 /* Light mode overrides */
 .light {
-  background: linear-gradient(to bottom, #ffffff, #f3f4f6);
+  background: linear-gradient(to bottom, #f8fafc, #e0f2fe, #dbeafe);
 }
 
 .light .App-header,
@@ -110,27 +110,139 @@ code {
   background: transparent !important;
 }
 
+/* Light mode text colors */
 .light h1,
 .light h2,
 .light h3,
-.light h4,
-.light p,
-.light span:not(.text-cyan-400):not(.text-teal-400) {
-  color: #1f2937 !important;
+.light h4 {
+  color: #0f172a !important;
+}
+
+.light p:not(.text-cyan-400):not(.text-teal-400),
+.light span:not(.text-cyan-400):not(.text-teal-400):not(.bg-clip-text) {
+  color: #334155 !important;
+}
+
+.light .text-white {
+  color: #0f172a !important;
 }
 
 .light .text-gray-300,
-.light .text-gray-400 {
-  color: #4b5563 !important;
+.light .text-gray-400,
+.light .text-gray-500 {
+  color: #475569 !important;
 }
 
-.light .bg-black,
+/* Light mode backgrounds */
+.light .bg-black {
+  background: #ffffff !important;
+}
+
 .light .bg-gray-900 {
-  background: white !important;
+  background: #f1f5f9 !important;
 }
 
-.light .border-cyan-500\/20 {
-  border-color: rgba(6, 182, 212, 0.3) !important;
+.light .bg-gray-900\/50,
+.light .bg-gray-900\/60,
+.light .bg-gray-900\/80 {
+  background: rgba(255, 255, 255, 0.8) !important;
+}
+
+.light .bg-black\/50,
+.light .bg-black\/80 {
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Light mode borders */
+.light .border-cyan-500\/10,
+.light .border-cyan-500\/20,
+.light .border-cyan-500\/30 {
+  border-color: rgba(6, 182, 212, 0.4) !important;
+}
+
+.light .border-cyan-500\/50 {
+  border-color: rgba(6, 182, 212, 0.6) !important;
+}
+
+/* Light mode glass effect */
+.light nav {
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(6, 182, 212, 0.2) !important;
+}
+
+/* Light mode shadows */
+.light .shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.light .shadow-2xl {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.light .shadow-cyan-500\/50,
+.light .shadow-cyan-500\/30,
+.light .shadow-cyan-500\/20 {
+  box-shadow: 0 10px 30px rgba(6, 182, 212, 0.3) !important;
+}
+
+/* Light mode gradient backgrounds */
+.light .bg-gradient-to-br,
+.light .bg-gradient-to-t,
+.light .bg-gradient-to-b {
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95), rgba(240, 249, 255, 0.95)) !important;
+}
+
+/* Light mode input fields */
+.light input,
+.light textarea {
+  background: #f8fafc !important;
+  border-color: rgba(6, 182, 212, 0.4) !important;
+  color: #0f172a !important;
+}
+
+.light input::placeholder,
+.light textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+.light input:focus,
+.light textarea:focus {
+  border-color: rgba(6, 182, 212, 0.8) !important;
+}
+
+/* Light mode cards and panels */
+.light .backdrop-blur-xl,
+.light .backdrop-blur-2xl {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(6, 182, 212, 0.3) !important;
+}
+
+/* Light mode particle background */
+.light canvas {
+  opacity: 0.15 !important;
+}
+
+/* Light mode hover effects */
+.light .hover\:bg-cyan-500\/10:hover {
+  background: rgba(6, 182, 212, 0.15) !important;
+}
+
+.light .hover\:bg-cyan-500\/20:hover {
+  background: rgba(6, 182, 212, 0.2) !important;
+}
+
+/* Light mode glowing effects */
+.light .blur-2xl,
+.light .blur-3xl {
+  opacity: 0.15 !important;
+}
+
+/* Light mode footer */
+.light footer {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border-top: 1px solid rgba(6, 182, 212, 0.3) !important;
 }
 
 @layer base {
