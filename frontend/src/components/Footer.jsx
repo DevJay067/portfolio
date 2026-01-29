@@ -87,17 +87,6 @@ const Footer = () => {
                   {profileData.email}
                 </a>
               </li>
-              <li>
-                <a
-                  href={`tel:${profileData.phone}`}
-                  className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 text-sm block"
-                >
-                  {profileData.phone}
-                </a>
-              </li>
-              <li className="text-gray-400 text-sm">
-                {profileData.location}
-              </li>
             </ul>
           </div>
         </div>
