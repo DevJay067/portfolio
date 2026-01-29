@@ -31,7 +31,7 @@ const ExperienceSection = () => {
     <section
       id="experience"
       ref={sectionRef}
-      className="relative py-24 bg-black overflow-hidden"
+      className="relative py-24 bg-black dark:bg-black overflow-hidden"
     >
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
