@@ -96,12 +96,12 @@ export const experience = [
     title: "Software Development",
     organization: "Academic Projects",
     period: "2025 - Present",
-    description: "Designed and developed web applications as part of academic coursework",
+    description: "Building modern web applications and exploring cutting-edge technologies",
     points: [
-      "Worked on frontend development using React, HTML, CSS, and Vite",
-      "Used Git for version control and collaboration",
-      "Implemented basic backend logic and database connectivity using SQL",
-      "Followed clean coding practices and basic security principles"
+      "Developing responsive frontends using React, HTML, CSS, and Vite",
+      "Implementing version control and collaborative workflows with Git",
+      "Creating backend solutions with Python and database connectivity using SQL",
+      "Following industry-standard coding practices and security principles"
     ]
   }
 ];
