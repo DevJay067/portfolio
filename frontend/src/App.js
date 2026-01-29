@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import { ThemeProvider } from './context/ThemeContext';
 import ParticleBackground from './components/ParticleBackground';
 import GlassNavbar from './components/GlassNavbar';
 import HeroSection from './components/HeroSection';
@@ -13,18 +14,20 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="App">
-      <ParticleBackground />
-      <GlassNavbar />
-      <HeroSection />
-      <StatsSection />
-      <AboutSection />
-      <SkillsSection />
-      <ProjectsSection />
-      <ExperienceSection />
-      <ContactSection />
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <div className="App">
+        <ParticleBackground />
+        <GlassNavbar />
+        <HeroSection />
+        <StatsSection />
+        <AboutSection />
+        <SkillsSection />
+        <ProjectsSection />
+        <ExperienceSection />
+        <ContactSection />
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }
 
