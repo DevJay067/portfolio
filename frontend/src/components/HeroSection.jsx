@@ -151,14 +151,6 @@ const HeroSection = () => {
             >
               View Projects
             </a>
-
-            <button
-              onClick={() => alert('Resume download feature - Add your resume link here!')}
-              className="group px-8 py-4 bg-black/50 border-2 border-teal-500/50 text-teal-400 rounded-full font-medium hover:bg-teal-500/10 hover:border-teal-500 transition-all duration-300 hover:scale-105 flex items-center gap-2"
-            >
-              <Download size={20} className="group-hover:animate-bounce" />
-              Resume
-            </button>
           </div>
         </div>
 
