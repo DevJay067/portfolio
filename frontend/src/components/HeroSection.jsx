@@ -155,7 +155,7 @@ const HeroSection = () => {
         </div>
 
         {/* 3D Profile Card */}
-        <div className="relative animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+        <div className="relative animate-fade-in-up max-w-md mx-auto" style={{ animationDelay: '0.2s' }}>
           <div className="relative group perspective-1000">
             {/* Animated rings */}
             <div className="absolute inset-0 -z-10">
@@ -164,12 +164,12 @@ const HeroSection = () => {
             </div>
 
             {/* Glowing effect */}
-            <div className="absolute -inset-8 bg-gradient-to-r from-cyan-500 to-teal-500 rounded-full opacity-20 blur-3xl group-hover:opacity-40 transition-opacity duration-700 animate-pulse" />
+            <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500 to-teal-500 rounded-3xl opacity-20 blur-3xl group-hover:opacity-40 transition-opacity duration-700 animate-pulse" />
             
             {/* Card */}
             <div 
               ref={imageRef}
-              className="relative bg-gradient-to-br from-gray-900/60 to-black/60 backdrop-blur-2xl border-2 border-cyan-500/30 rounded-3xl p-2 transition-all duration-300 ease-out"
+              className="relative bg-gradient-to-br from-gray-900/60 to-black/60 backdrop-blur-2xl border-2 border-cyan-500/30 rounded-3xl p-2 transition-all duration-300 ease-out w-fit mx-auto"
               style={{
                 transformStyle: 'preserve-3d',
                 willChange: 'transform'
@@ -190,7 +190,7 @@ const HeroSection = () => {
                 <img
                   src={profileData.profileImage}
                   alt={profileData.name}
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover object-center block"
                   style={{ 
                     width: '400px',
                     height: '400px'
