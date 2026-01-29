@@ -76,14 +76,14 @@ export const projects = [
     id: 2,
     title: "EOD Rover",
     description: "Advanced robotics project for explosive ordnance disposal with autonomous navigation and real-time control systems",
-    image: "https://images.unsplash.com/photo-1506399558188-acca6f8cbf41?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwxfHxjbG91ZCUyMHN0b3JhZ2V8ZW58MHx8fHwxNzY5MzY3NzUzfDA&ixlib=rb-4.1.0&q=85",
+    image: "https://images.unsplash.com/photo-1518314916381-77a37c2a49ae?crop=entropy&cs=srgb&fm=jpg&q=85",
     technologies: ["Robotics", "IoT", "Python", "Hardware"],
-    status: "In Progress",
+    status: "Completed",
     year: "2025",
     highlights: [
-      "Developing autonomous navigation system",
-      "Building real-time control interface",
-      "Implementing safety mechanisms and sensors"
+      "Developed autonomous navigation system",
+      "Built real-time control interface",
+      "Implemented safety mechanisms and sensors"
     ],
     liveDemo: "#",
     github: "https://github.com/DevJay067"
