@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ArrowRight, Code2, Sparkles } from 'lucide-react';
+import { ArrowRight, Code2, Sparkles, Download } from 'lucide-react';
 import { profileData } from '../data/mock';
 
 const HeroSection = () => {
   const floatingRef = useRef(null);
+  const imageRef = useRef(null);
   const [typedText, setTypedText] = useState('');
   const fullText = 'Building innovative solutions with code';
 
@@ -30,10 +31,37 @@ const HeroSection = () => {
         const y = (clientY / innerHeight - 0.5) * 20;
         floatingRef.current.style.transform = `translate(${x}px, ${y}px)`;
       }
+
+      // 3D tilt effect on image
+      if (imageRef.current) {
+        const rect = imageRef.current.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * -10;
+        const rotateY = ((x - centerX) / centerX) * 10;
+        imageRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+      }
+    };
+
+    const handleMouseLeave = () => {
+      if (imageRef.current) {
+        imageRef.current.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+      }
     };
 
     window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    if (imageRef.current) {
+      imageRef.current.addEventListener('mouseleave', handleMouseLeave);
+    }
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      if (imageRef.current) {
+        imageRef.current.removeEventListener('mouseleave', handleMouseLeave);
+      }
+    };
   }, []);
 
   const scrollToContact = () => {
