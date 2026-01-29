@@ -29,7 +29,7 @@ const StatsSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative py-20 bg-black overflow-hidden"
+      className="relative py-20 bg-black dark:bg-black overflow-hidden"
     >
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
