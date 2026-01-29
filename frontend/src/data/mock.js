@@ -6,8 +6,8 @@ export const profileData = {
   tagline: "Hello, myself Jay Magar",
   description: "Passionate about technology and innovation. Building cutting-edge web applications, exploring AI/ML systems, and creating solutions that make a difference. Always learning, always building.",
   email: "jaymagar310@gmail.com",
-  phone: "7498198688",
-  location: "Spine road, sec-19/20, Chikhali, Pune, 411062",
+  phone: "",
+  location: "",
   profileImage: "https://customer-assets.emergentagent.com/job_jm-developer/artifacts/f93eemsz_WhatsApp%20Image%202026-01-25%20at%2011.47.15%20PM.jpeg"
 };
 
