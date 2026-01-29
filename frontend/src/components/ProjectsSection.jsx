@@ -32,7 +32,7 @@ const ProjectsSection = () => {
     <section
       id="projects"
       ref={sectionRef}
-      className="relative py-24 bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden"
+      className="relative py-24 bg-gradient-to-b from-black via-gray-900 to-black dark:from-black dark:via-gray-900 dark:to-black overflow-hidden"
     >
       {/* Background elements */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full filter blur-3xl" />
