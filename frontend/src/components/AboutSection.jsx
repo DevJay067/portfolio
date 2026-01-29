@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Mail, Phone, MapPin, Award } from 'lucide-react';
+import { Mail, Award } from 'lucide-react';
 import { profileData, aboutHighlights } from '../data/mock';
 
 const AboutSection = () => {
