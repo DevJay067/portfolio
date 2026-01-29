@@ -75,19 +75,9 @@ const AboutSection = () => {
                   <div className="p-2 bg-cyan-500/10 rounded-lg group-hover:bg-cyan-500/20 transition-colors duration-300">
                     <Mail size={20} className="text-cyan-400" />
                   </div>
-                  <span>{profileData.email}</span>
-                </div>
-                <div className="flex items-center gap-3 text-gray-300 hover:text-cyan-400 transition-colors duration-300 group">
-                  <div className="p-2 bg-cyan-500/10 rounded-lg group-hover:bg-cyan-500/20 transition-colors duration-300">
-                    <Phone size={20} className="text-cyan-400" />
-                  </div>
-                  <span>{profileData.phone}</span>
-                </div>
-                <div className="flex items-center gap-3 text-gray-300 hover:text-cyan-400 transition-colors duration-300 group">
-                  <div className="p-2 bg-cyan-500/10 rounded-lg group-hover:bg-cyan-500/20 transition-colors duration-300">
-                    <MapPin size={20} className="text-cyan-400" />
-                  </div>
-                  <span>{profileData.location}</span>
+                  <a href={`mailto:${profileData.email}`}>
+                    {profileData.email}
+                  </a>
                 </div>
               </div>
             </div>
