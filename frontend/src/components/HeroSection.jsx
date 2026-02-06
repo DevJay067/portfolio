@@ -2,12 +2,14 @@ import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight, Code2, Sparkles } from 'lucide-react';
 import { Parallax } from 'react-scroll-parallax';
 import { profileData } from '../data/mock';
+import { useSoundContext } from '../context/SoundContext';
 
 const HeroSection = () => {
   const floatingRef = useRef(null);
   const imageRef = useRef(null);
   const [typedText, setTypedText] = useState('');
   const fullText = 'Building innovative solutions with code';
+  const { playClick, playHover, playSuccess } = useSoundContext();
 
   useEffect(() => {
     let index = 0;
@@ -65,10 +67,16 @@ const HeroSection = () => {
   }, []);
 
   const scrollToContact = () => {
+    playClick();
     const element = document.querySelector('#contact');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const scrollToProjects = () => {
+    playClick();
+    document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -78,19 +86,16 @@ const HeroSection = () => {
     >
       {/* Multi-layered parallax background */}
       <div className="absolute inset-0">
-        {/* Layer 1 - Slowest, furthest back */}
         <Parallax speed={-30} className="absolute inset-0">
           <div className="absolute top-10 left-10 w-96 h-96 bg-orange-600/20 rounded-full filter blur-3xl" />
           <div className="absolute bottom-10 right-10 w-[500px] h-[500px] bg-red-600/15 rounded-full filter blur-3xl" />
         </Parallax>
         
-        {/* Layer 2 - Medium speed */}
         <Parallax speed={-20} className="absolute inset-0">
           <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-amber-500/15 rounded-full filter blur-2xl" />
           <div className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-orange-500/20 rounded-full filter blur-2xl" />
         </Parallax>
         
-        {/* Layer 3 - Faster, closer */}
         <Parallax speed={-10} className="absolute inset-0">
           <div className="absolute top-1/2 left-1/4 w-48 h-48 bg-red-500/10 rounded-full filter blur-xl" />
           <div className="absolute top-1/4 right-1/3 w-40 h-40 bg-amber-400/15 rounded-full filter blur-xl" />
@@ -165,7 +170,9 @@ const HeroSection = () => {
                 {['React', 'Python', 'AI/ML', 'Full-Stack'].map((tech, index) => (
                   <div
                     key={tech}
-                    className="px-4 py-2 bg-gray-800/50 border border-orange-500/30 rounded-lg text-orange-400 text-sm font-medium hover:border-orange-500/50 hover:bg-orange-500/10 transition-all duration-300 hover:scale-105"
+                    onClick={() => playClick()}
+                    onMouseEnter={() => playHover()}
+                    className="px-4 py-2 bg-gray-800/50 border border-orange-500/30 rounded-lg text-orange-400 text-sm font-medium hover:border-orange-500/50 hover:bg-orange-500/10 transition-all duration-300 hover:scale-105 cursor-pointer active:scale-95"
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     <Sparkles size={14} className="inline mr-2" />
@@ -178,22 +185,20 @@ const HeroSection = () => {
             <div className="flex flex-wrap gap-4 pt-4">
               <button
                 onClick={scrollToContact}
-                className="group px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-full font-medium hover:shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 hover:scale-105 flex items-center gap-2"
+                onMouseEnter={() => playHover()}
+                className="group px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-full font-medium hover:shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 hover:scale-105 active:scale-95 flex items-center gap-2"
               >
                 Get In Touch
                 <ArrowRight className="group-hover:translate-x-1 transition-transform duration-300" size={20} />
               </button>
               
-              <a
-                href="#projects"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="px-8 py-4 border-2 border-orange-500/50 text-orange-400 rounded-full font-medium hover:bg-orange-500/10 hover:border-orange-500 transition-all duration-300 hover:scale-105"
+              <button
+                onClick={scrollToProjects}
+                onMouseEnter={() => playHover()}
+                className="px-8 py-4 border-2 border-orange-500/50 text-orange-400 rounded-full font-medium hover:bg-orange-500/10 hover:border-orange-500 transition-all duration-300 hover:scale-105 active:scale-95"
               >
                 View Projects
-              </a>
+              </button>
             </div>
           </div>
         </Parallax>
@@ -216,6 +221,7 @@ const HeroSection = () => {
               {/* Card */}
               <div 
                 ref={imageRef}
+                onMouseEnter={() => playHover()}
                 className="relative bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-2xl border-2 border-orange-500/30 rounded-3xl p-2 transition-all duration-300 ease-out w-fit mx-auto"
                 style={{
                   transformStyle: 'preserve-3d',
