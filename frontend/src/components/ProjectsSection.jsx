@@ -98,7 +98,10 @@ const ProjectsSection = () => {
                   isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
                 }`}
                 style={{ transitionDelay: `${index * 200}ms` }}
-                onMouseEnter={() => setHoveredProject(project.id)}
+                onMouseEnter={() => {
+                  setHoveredProject(project.id);
+                  playHover();
+                }}
                 onMouseLeave={() => setHoveredProject(null)}
               >
                 <div className="relative perspective-1000">
