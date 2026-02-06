@@ -8,6 +8,7 @@ const ProjectsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredProject, setHoveredProject] = useState(null);
   const sectionRef = useRef(null);
+  const { playClick, playHover, playPop } = useSoundContext();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
