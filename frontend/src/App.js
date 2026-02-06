@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import { ParallaxProvider } from 'react-scroll-parallax';
 import { ThemeProvider } from './context/ThemeContext';
 import ParticleBackground from './components/ParticleBackground';
 import GlassNavbar from './components/GlassNavbar';
@@ -14,20 +15,22 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <ThemeProvider>
-      <div className="App">
-        <ParticleBackground />
-        <GlassNavbar />
-        <HeroSection />
-        <StatsSection />
-        <AboutSection />
-        <SkillsSection />
-        <ProjectsSection />
-        <ExperienceSection />
-        <ContactSection />
-        <Footer />
-      </div>
-    </ThemeProvider>
+    <ParallaxProvider>
+      <ThemeProvider>
+        <div className="App">
+          <ParticleBackground />
+          <GlassNavbar />
+          <HeroSection />
+          <StatsSection />
+          <AboutSection />
+          <SkillsSection />
+          <ProjectsSection />
+          <ExperienceSection />
+          <ContactSection />
+          <Footer />
+        </div>
+      </ThemeProvider>
+    </ParallaxProvider>
   );
 }
 

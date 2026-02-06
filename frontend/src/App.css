@@ -47,6 +47,24 @@
   }
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 87, 34, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 87, 34, 0.6);
+  }
+}
+
 .animate-spin-slow {
   animation: spin-slow 20s linear infinite;
 }
@@ -67,6 +85,14 @@
   animation: scan 3s ease-in-out infinite;
 }
 
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
 /* 3D perspective utilities */
 .perspective-1000 {
   perspective: 1000px;
@@ -78,32 +104,46 @@ html {
   scroll-padding-top: 80px;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - Red/Orange theme */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #000;
+  background: #1a1a1a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #00d9ff, #00fff5);
+  background: linear-gradient(to bottom, #ff5722, #ff9800);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #00fff5, #00d9ff);
+  background: linear-gradient(to bottom, #ff9800, #ff5722);
 }
 
 /* Remove focus outline but keep accessibility */
 *:focus {
-  outline: 2px solid rgba(0, 217, 255, 0.5);
+  outline: 2px solid rgba(255, 87, 34, 0.5);
   outline-offset: 2px;
 }
 
 /* Disable default select highlight to use custom colors */
 ::selection {
-  background-color: rgba(0, 217, 255, 0.3);
+  background-color: rgba(255, 87, 34, 0.3);
   color: white;
+}
+
+/* Parallax sections */
+.parallax-section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient text for red/orange theme */
+.gradient-text-fire {
+  background: linear-gradient(135deg, #ff5722, #ff9800, #f44336);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

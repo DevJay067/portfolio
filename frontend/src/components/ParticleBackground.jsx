@@ -19,7 +19,7 @@ const ParticleBackground = () => {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    // Particle class
+    // Particle class with red/orange theme
     class Particle {
       constructor() {
         this.x = Math.random() * canvas.width;
@@ -28,6 +28,14 @@ const ParticleBackground = () => {
         this.speedX = (Math.random() - 0.5) * 0.5;
         this.speedY = (Math.random() - 0.5) * 0.5;
         this.opacity = Math.random() * 0.5 + 0.2;
+        // Randomly choose between red, orange colors
+        const colors = [
+          '255, 87, 34',   // Deep Orange
+          '255, 152, 0',   // Orange
+          '244, 67, 54',   // Red
+          '255, 193, 7'    // Amber
+        ];
+        this.color = colors[Math.floor(Math.random() * colors.length)];
       }
 
       update() {
@@ -42,7 +50,7 @@ const ParticleBackground = () => {
       }
 
       draw() {
-        ctx.fillStyle = `rgba(0, 217, 255, ${this.opacity})`;
+        ctx.fillStyle = `rgba(${this.color}, ${this.opacity})`;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
@@ -68,8 +76,8 @@ const ParticleBackground = () => {
           const distance = Math.sqrt(dx * dx + dy * dy);
 
           if (distance < 120) {
-            const opacity = (1 - distance / 120) * 0.2;
-            ctx.strokeStyle = `rgba(0, 217, 255, ${opacity})`;
+            const opacity = (1 - distance / 120) * 0.15;
+            ctx.strokeStyle = `rgba(255, 87, 34, ${opacity})`;
             ctx.lineWidth = 0.5;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
@@ -105,7 +113,7 @@ const ParticleBackground = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-0 opacity-30"
+      className="fixed inset-0 pointer-events-none z-0 opacity-40"
       style={{ mixBlendMode: 'screen' }}
     />
   );
