@@ -46,7 +46,6 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission (MOCKED - will be replaced with backend API)
     setTimeout(() => {
       console.log('Form submitted:', formData);
       alert('Thank you for your message! I will get back to you soon.');
@@ -61,15 +60,34 @@ const ContactSection = () => {
       ref={sectionRef}
       className="relative py-24 bg-gradient-to-b from-gray-900 via-black to-gray-900 overflow-hidden"
     >
-      {/* Background elements with parallax */}
-      <Parallax speed={-15} className="absolute inset-0">
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-orange-500/10 rounded-full filter blur-3xl" />
-        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-red-500/10 rounded-full filter blur-3xl" />
+      {/* Multi-layer parallax backgrounds */}
+      <Parallax speed={-35} className="absolute inset-0">
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full filter blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-red-500/10 rounded-full filter blur-3xl" />
+      </Parallax>
+      
+      <Parallax speed={-25} translateX={[80, -80]} className="absolute inset-0">
+        <div className="absolute top-1/3 left-1/4 w-56 h-56 bg-amber-500/8 rounded-full filter blur-2xl" />
+      </Parallax>
+      
+      <Parallax speed={-15} translateX={[-50, 50]} className="absolute inset-0">
+        <div className="absolute bottom-1/3 right-1/4 w-40 h-40 bg-orange-400/10 rounded-full filter blur-xl" />
+      </Parallax>
+
+      {/* Floating decorative elements */}
+      <Parallax speed={25} rotate={[0, 90]} className="absolute top-20 left-16">
+        <div className="w-12 h-12 border-2 border-orange-500/25 rounded-lg" />
+      </Parallax>
+      <Parallax speed={-25} rotate={[90, 0]} className="absolute bottom-20 right-16">
+        <div className="w-16 h-16 border-2 border-red-500/25 rounded-full" />
+      </Parallax>
+      <Parallax speed={20} translateY={[-25, 25]} className="absolute top-1/2 right-8">
+        <div className="w-10 h-10 border border-amber-500/30 rounded-lg rotate-45" />
       </Parallax>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Section header */}
-        <Parallax speed={5}>
+        <Parallax speed={12} scale={[0.9, 1.05]}>
           <div
             className={`text-center mb-16 transform transition-all duration-700 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
@@ -87,75 +105,78 @@ const ContactSection = () => {
 
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact info */}
-          <Parallax speed={-5}>
+          <Parallax speed={-12} translateX={[-25, 0]}>
             <div
               className={`space-y-8 transform transition-all duration-700 ${
                 isVisible ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'
               }`}
               style={{ transitionDelay: '200ms' }}
             >
-              {/* Contact cards */}
-              <div className="space-y-4">
-                <div className="group relative bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl border border-orange-500/20 rounded-xl p-6 hover:border-orange-500/50 transition-all duration-300 hover:transform hover:scale-105">
-                  <div className="flex items-center gap-4">
-                    <div className="p-3 bg-orange-500/10 rounded-lg group-hover:bg-orange-500/20 transition-colors duration-300">
-                      <Mail className="text-orange-400" size={24} />
-                    </div>
-                    <div>
-                      <h3 className="text-white font-semibold mb-1">Email</h3>
-                      <a href={`mailto:${profileData.email}`} className="text-gray-400 hover:text-orange-400 transition-colors duration-300">
-                        {profileData.email}
-                      </a>
+              <Parallax speed={5} translateY={[10, -10]}>
+                <div className="space-y-4">
+                  <div className="group relative bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl border border-orange-500/20 rounded-xl p-6 hover:border-orange-500/50 transition-all duration-300 hover:transform hover:scale-105">
+                    <div className="flex items-center gap-4">
+                      <div className="p-3 bg-orange-500/10 rounded-lg group-hover:bg-orange-500/20 transition-colors duration-300">
+                        <Mail className="text-orange-400" size={24} />
+                      </div>
+                      <div>
+                        <h3 className="text-white font-semibold mb-1">Email</h3>
+                        <a href={`mailto:${profileData.email}`} className="text-gray-400 hover:text-orange-400 transition-colors duration-300">
+                          {profileData.email}
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </Parallax>
 
-              {/* Social Links */}
-              <div className="space-y-4 mt-8">
-                <h3 className="text-xl font-bold text-white">Connect With Me</h3>
-                <div className="flex gap-4">
-                  <a
-                    href="https://github.com/DevJay067"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group relative p-4 bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl border border-orange-500/20 rounded-xl hover:border-orange-500/50 transition-all duration-300 hover:transform hover:scale-110 flex-1"
-                  >
-                    <div className="flex flex-col items-center gap-2">
-                      <Github className="text-orange-400 group-hover:text-orange-300" size={28} />
-                      <span className="text-gray-400 text-sm group-hover:text-white transition-colors duration-300">Github</span>
-                    </div>
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/jay-magar-5ba92b369/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group relative p-4 bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl border border-orange-500/20 rounded-xl hover:border-orange-500/50 transition-all duration-300 hover:transform hover:scale-110 flex-1"
-                  >
-                    <div className="flex flex-col items-center gap-2">
-                      <Linkedin className="text-orange-400 group-hover:text-orange-300" size={28} />
-                      <span className="text-gray-400 text-sm group-hover:text-white transition-colors duration-300">LinkedIn</span>
-                    </div>
-                  </a>
+              <Parallax speed={3} translateY={[8, -8]}>
+                <div className="space-y-4 mt-8">
+                  <h3 className="text-xl font-bold text-white">Connect With Me</h3>
+                  <div className="flex gap-4">
+                    <a
+                      href="https://github.com/DevJay067"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group relative p-4 bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl border border-orange-500/20 rounded-xl hover:border-orange-500/50 transition-all duration-300 hover:transform hover:scale-110 flex-1"
+                    >
+                      <div className="flex flex-col items-center gap-2">
+                        <Github className="text-orange-400 group-hover:text-orange-300" size={28} />
+                        <span className="text-gray-400 text-sm group-hover:text-white transition-colors duration-300">Github</span>
+                      </div>
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/in/jay-magar-5ba92b369/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group relative p-4 bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl border border-orange-500/20 rounded-xl hover:border-orange-500/50 transition-all duration-300 hover:transform hover:scale-110 flex-1"
+                    >
+                      <div className="flex flex-col items-center gap-2">
+                        <Linkedin className="text-orange-400 group-hover:text-orange-300" size={28} />
+                        <span className="text-gray-400 text-sm group-hover:text-white transition-colors duration-300">LinkedIn</span>
+                      </div>
+                    </a>
+                  </div>
                 </div>
-              </div>
+              </Parallax>
 
-              {/* Fun fact card */}
-              <div className="relative mt-8 bg-gradient-to-br from-orange-500/10 to-red-500/10 backdrop-blur-xl border border-orange-500/30 rounded-xl p-6">
-                <div className="absolute -top-3 -right-3 w-6 h-6 bg-gradient-to-r from-orange-500 to-red-500 rounded-full animate-pulse" />
-                <h4 className="text-white font-semibold mb-2 flex items-center gap-2">
-                  <span className="text-2xl">💡</span>
-                  Quick Response
-                </h4>
-                <p className="text-gray-300 text-sm">
-                  I typically respond to messages within 24 hours. Let's build something amazing together!
-                </p>
-              </div>
+              <Parallax speed={1} translateY={[5, -5]}>
+                <div className="relative mt-8 bg-gradient-to-br from-orange-500/10 to-red-500/10 backdrop-blur-xl border border-orange-500/30 rounded-xl p-6">
+                  <div className="absolute -top-3 -right-3 w-6 h-6 bg-gradient-to-r from-orange-500 to-red-500 rounded-full animate-pulse" />
+                  <h4 className="text-white font-semibold mb-2 flex items-center gap-2">
+                    <span className="text-2xl">💡</span>
+                    Quick Response
+                  </h4>
+                  <p className="text-gray-300 text-sm">
+                    I typically respond to messages within 24 hours. Let's build something amazing together!
+                  </p>
+                </div>
+              </Parallax>
             </div>
           </Parallax>
 
           {/* Contact form */}
-          <Parallax speed={5}>
+          <Parallax speed={12} translateX={[25, 0]} rotate={[-1, 1]}>
             <div
               className={`transform transition-all duration-700 ${
                 isVisible ? 'translate-x-0 opacity-100' : 'translate-x-12 opacity-0'
