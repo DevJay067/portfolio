@@ -166,14 +166,18 @@ const ProjectsSection = () => {
                       <div className="flex gap-3 pt-4">
                         <a
                           href={project.liveDemo}
-                          className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-orange-500/50 transition-all duration-300 hover:scale-105"
+                          onClick={() => playClick()}
+                          onMouseEnter={() => playHover()}
+                          className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-orange-500/50 transition-all duration-300 hover:scale-105 active:scale-95"
                         >
                           <ExternalLink size={16} />
                           Live Demo
                         </a>
                         <a
                           href={project.github}
-                          className="flex items-center justify-center gap-2 px-4 py-2 border border-orange-500/50 text-orange-400 rounded-lg font-medium hover:bg-orange-500/10 hover:border-orange-500 transition-all duration-300 hover:scale-105"
+                          onClick={() => playClick()}
+                          onMouseEnter={() => playHover()}
+                          className="flex items-center justify-center gap-2 px-4 py-2 border border-orange-500/50 text-orange-400 rounded-lg font-medium hover:bg-orange-500/10 hover:border-orange-500 transition-all duration-300 hover:scale-105 active:scale-95"
                         >
                           <Github size={16} />
                         </a>
