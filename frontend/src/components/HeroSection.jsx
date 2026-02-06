@@ -33,7 +33,6 @@ const HeroSection = () => {
         floatingRef.current.style.transform = `translate(${x}px, ${y}px)`;
       }
 
-      // 3D tilt effect on image
       if (imageRef.current) {
         const rect = imageRef.current.getBoundingClientRect();
         const x = e.clientX - rect.left;
@@ -77,77 +76,104 @@ const HeroSection = () => {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-black to-gray-900"
     >
-      {/* Animated background with parallax */}
-      <div className="absolute inset-0 opacity-30">
-        <Parallax speed={-10}>
-          <div className="absolute top-20 left-20 w-72 h-72 bg-orange-500 rounded-full filter blur-3xl opacity-20 animate-pulse" />
+      {/* Multi-layered parallax background */}
+      <div className="absolute inset-0">
+        {/* Layer 1 - Slowest, furthest back */}
+        <Parallax speed={-30} className="absolute inset-0">
+          <div className="absolute top-10 left-10 w-96 h-96 bg-orange-600/20 rounded-full filter blur-3xl" />
+          <div className="absolute bottom-10 right-10 w-[500px] h-[500px] bg-red-600/15 rounded-full filter blur-3xl" />
         </Parallax>
-        <Parallax speed={-15}>
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-red-500 rounded-full filter blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }} />
+        
+        {/* Layer 2 - Medium speed */}
+        <Parallax speed={-20} className="absolute inset-0">
+          <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-amber-500/15 rounded-full filter blur-2xl" />
+          <div className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-orange-500/20 rounded-full filter blur-2xl" />
         </Parallax>
-        <Parallax speed={-5}>
-          <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-amber-500 rounded-full filter blur-3xl opacity-10 animate-pulse" style={{ animationDelay: '2s' }} />
+        
+        {/* Layer 3 - Faster, closer */}
+        <Parallax speed={-10} className="absolute inset-0">
+          <div className="absolute top-1/2 left-1/4 w-48 h-48 bg-red-500/10 rounded-full filter blur-xl" />
+          <div className="absolute top-1/4 right-1/3 w-40 h-40 bg-amber-400/15 rounded-full filter blur-xl" />
         </Parallax>
       </div>
 
-      {/* Floating 3D shapes with parallax */}
+      {/* Floating 3D shapes with enhanced parallax */}
       <div
         ref={floatingRef}
         className="absolute inset-0 pointer-events-none transition-transform duration-300 ease-out"
       >
-        <Parallax speed={5} rotate={[0, 360]}>
-          <div className="absolute top-1/4 right-1/4 w-32 h-32 border-2 border-orange-400/30 rounded-lg transform rotate-45 animate-spin-slow" />
+        <Parallax speed={15} rotate={[-20, 20]} className="absolute top-1/4 right-1/4">
+          <div className="w-32 h-32 border-2 border-orange-400/40 rounded-lg transform rotate-45 animate-spin-slow" />
         </Parallax>
-        <Parallax speed={-5}>
-          <div className="absolute bottom-1/3 left-1/4 w-24 h-24 border-2 border-red-400/30 rounded-full animate-bounce-slow" />
+        
+        <Parallax speed={-25} translateX={[-20, 20]} className="absolute bottom-1/3 left-1/4">
+          <div className="w-24 h-24 border-2 border-red-400/40 rounded-full animate-bounce-slow" />
         </Parallax>
-        <Parallax speed={10}>
-          <div className="absolute top-1/2 right-1/3 w-16 h-16 border-2 border-orange-400/20 rounded-lg transform -rotate-12" style={{ animation: 'spin-slow 15s linear infinite reverse' }} />
+        
+        <Parallax speed={20} scale={[0.8, 1.2]} className="absolute top-1/2 right-1/3">
+          <div className="w-16 h-16 border-2 border-orange-400/30 rounded-lg transform -rotate-12" />
         </Parallax>
-        <Parallax speed={-8}>
-          <div className="absolute bottom-1/4 right-1/2 w-20 h-20 border border-amber-400/20 rounded-full" style={{ animation: 'bounce-slow 4s ease-in-out infinite' }} />
+        
+        <Parallax speed={-15} rotate={[0, 180]} className="absolute bottom-1/4 right-1/2">
+          <div className="w-20 h-20 border border-amber-400/30 rounded-full" />
+        </Parallax>
+        
+        <Parallax speed={25} translateY={[-30, 30]} className="absolute top-1/3 left-1/6">
+          <div className="w-12 h-12 border-2 border-red-500/25 rounded-lg rotate-12" />
+        </Parallax>
+        
+        <Parallax speed={-20} translateX={[30, -30]} className="absolute bottom-1/3 right-1/6">
+          <div className="w-14 h-14 border border-orange-500/35 rounded-full" />
         </Parallax>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-        {/* Text Content */}
-        <Parallax speed={-5}>
+        {/* Text Content with parallax */}
+        <Parallax speed={-8} translateX={[-10, 0]}>
           <div className="space-y-6 animate-fade-in-up">
-            <div className="inline-block px-4 py-2 bg-orange-500/10 border border-orange-500/30 rounded-full text-orange-400 text-sm font-medium backdrop-blur-sm">
-              {profileData.title}
-            </div>
+            <Parallax speed={5} opacity={[0.5, 1]}>
+              <div className="inline-block px-4 py-2 bg-orange-500/10 border border-orange-500/30 rounded-full text-orange-400 text-sm font-medium backdrop-blur-sm">
+                {profileData.title}
+              </div>
+            </Parallax>
             
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-              <span className="text-white">Hello, I'm </span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-red-500 to-amber-400 mt-2">
-                {profileData.name}
-              </span>
-            </h1>
+            <Parallax speed={-5}>
+              <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+                <span className="text-white">Hello, I'm </span>
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-red-500 to-amber-400 mt-2">
+                  {profileData.name}
+                </span>
+              </h1>
+            </Parallax>
 
-            {/* Typing animation */}
-            <div className="flex items-center gap-2 text-xl text-orange-400 font-medium">
-              <Code2 size={24} className="animate-pulse" />
-              <span className="min-h-[30px]">{typedText}</span>
-              <span className="inline-block w-0.5 h-6 bg-orange-400 animate-pulse" />
-            </div>
+            <Parallax speed={-3}>
+              <div className="flex items-center gap-2 text-xl text-orange-400 font-medium">
+                <Code2 size={24} className="animate-pulse" />
+                <span className="min-h-[30px]">{typedText}</span>
+                <span className="inline-block w-0.5 h-6 bg-orange-400 animate-pulse" />
+              </div>
+            </Parallax>
 
-            <p className="text-lg text-gray-300 leading-relaxed max-w-xl">
-              {profileData.description}
-            </p>
+            <Parallax speed={-2}>
+              <p className="text-lg text-gray-300 leading-relaxed max-w-xl">
+                {profileData.description}
+              </p>
+            </Parallax>
 
-            {/* Tech stack badges */}
-            <div className="flex flex-wrap gap-3">
-              {['React', 'Python', 'AI/ML', 'Full-Stack'].map((tech, index) => (
-                <div
-                  key={tech}
-                  className="px-4 py-2 bg-gray-800/50 border border-orange-500/30 rounded-lg text-orange-400 text-sm font-medium hover:border-orange-500/50 hover:bg-orange-500/10 transition-all duration-300 hover:scale-105"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <Sparkles size={14} className="inline mr-2" />
-                  {tech}
-                </div>
-              ))}
-            </div>
+            <Parallax speed={-1}>
+              <div className="flex flex-wrap gap-3">
+                {['React', 'Python', 'AI/ML', 'Full-Stack'].map((tech, index) => (
+                  <div
+                    key={tech}
+                    className="px-4 py-2 bg-gray-800/50 border border-orange-500/30 rounded-lg text-orange-400 text-sm font-medium hover:border-orange-500/50 hover:bg-orange-500/10 transition-all duration-300 hover:scale-105"
+                    style={{ animationDelay: `${index * 100}ms` }}
+                  >
+                    <Sparkles size={14} className="inline mr-2" />
+                    {tech}
+                  </div>
+                ))}
+              </div>
+            </Parallax>
 
             <div className="flex flex-wrap gap-4 pt-4">
               <button
@@ -172,15 +198,17 @@ const HeroSection = () => {
           </div>
         </Parallax>
 
-        {/* 3D Profile Card */}
-        <Parallax speed={5}>
+        {/* 3D Profile Card with enhanced parallax */}
+        <Parallax speed={10} scale={[0.9, 1.05]} rotate={[-2, 2]}>
           <div className="relative animate-fade-in-up max-w-md mx-auto" style={{ animationDelay: '0.2s' }}>
             <div className="relative group perspective-1000">
-              {/* Animated rings */}
-              <div className="absolute inset-0 -z-10">
+              {/* Animated rings with parallax */}
+              <Parallax speed={-15} scale={[0.8, 1.2]} className="absolute inset-0 -z-10">
                 <div className="absolute inset-0 rounded-full border-2 border-orange-500/20 animate-ping" style={{ animationDuration: '3s' }} />
-                <div className="absolute inset-8 rounded-full border-2 border-red-500/20 animate-ping" style={{ animationDuration: '4s', animationDelay: '1s' }} />
-              </div>
+              </Parallax>
+              <Parallax speed={-20} scale={[0.9, 1.1]} className="absolute inset-8 -z-10">
+                <div className="absolute inset-0 rounded-full border-2 border-red-500/20 animate-ping" style={{ animationDuration: '4s', animationDelay: '1s' }} />
+              </Parallax>
 
               {/* Glowing effect */}
               <div className="absolute -inset-4 bg-gradient-to-r from-orange-500 to-red-500 rounded-3xl opacity-20 blur-3xl group-hover:opacity-40 transition-opacity duration-700 animate-pulse" />
@@ -201,7 +229,6 @@ const HeroSection = () => {
                 <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-orange-400 rounded-br-xl" />
 
                 <div className="relative rounded-2xl overflow-hidden border-4 border-orange-500/40 shadow-2xl shadow-orange-500/30">
-                  {/* Scan line effect */}
                   <div className="absolute inset-0 z-10 pointer-events-none">
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-orange-500/10 to-transparent animate-scan" />
                   </div>
@@ -218,7 +245,6 @@ const HeroSection = () => {
                     }}
                   />
 
-                  {/* Gradient overlay to blend black edges */}
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-gray-900/30" />
                   <div className="absolute inset-0 bg-gradient-to-r from-gray-900/40 via-transparent to-gray-900/40" />
                 </div>
@@ -228,12 +254,14 @@ const HeroSection = () => {
         </Parallax>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-orange-400/50 rounded-full flex items-start justify-center p-2">
-          <div className="w-1 h-3 bg-orange-400 rounded-full animate-scroll" />
+      {/* Scroll indicator with parallax */}
+      <Parallax speed={20} opacity={[1, 0]} className="absolute bottom-8 left-1/2 -translate-x-1/2">
+        <div className="animate-bounce">
+          <div className="w-6 h-10 border-2 border-orange-400/50 rounded-full flex items-start justify-center p-2">
+            <div className="w-1 h-3 bg-orange-400 rounded-full animate-scroll" />
+          </div>
         </div>
-      </div>
+      </Parallax>
     </section>
   );
 };
