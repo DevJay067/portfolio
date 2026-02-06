@@ -204,7 +204,11 @@ const ProjectsSection = () => {
             }`}
             style={{ transitionDelay: '600ms' }}
           >
-            <button className="group px-8 py-4 border-2 border-orange-500/50 text-orange-400 rounded-full font-medium hover:bg-orange-500/10 hover:border-orange-500 transition-all duration-300 hover:scale-105 flex items-center gap-2 mx-auto">
+            <button 
+              onClick={() => playClick()}
+              onMouseEnter={() => playHover()}
+              className="group px-8 py-4 border-2 border-orange-500/50 text-orange-400 rounded-full font-medium hover:bg-orange-500/10 hover:border-orange-500 transition-all duration-300 hover:scale-105 active:scale-95 flex items-center gap-2 mx-auto"
+            >
               View All Projects
               <ExternalLink className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" size={20} />
             </button>
