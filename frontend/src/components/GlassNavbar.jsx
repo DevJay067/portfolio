@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Menu, X, Sun, Moon, Volume2, VolumeX } from 'lucide-react';
 import { navLinks } from '../data/mock';
 import { useTheme } from '../context/ThemeContext';
+import { useSoundContext } from '../context/SoundContext';
 
 const GlassNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const { theme, toggleTheme } = useTheme();
+  const { playClick, playHover, playSwoosh, playToggle, soundEnabled, toggleSound } = useSoundContext();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
       
-      // Update active section based on scroll position
       const sections = navLinks.map(link => link.href.substring(1));
       const current = sections.find(section => {
         const element = document.getElementById(section);
@@ -31,10 +32,29 @@ const GlassNavbar = () => {
   }, []);
 
   const scrollToSection = (href) => {
+    playClick();
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
       setIsMobileMenuOpen(false);
+    }
+  };
+
+  const handleMobileMenuToggle = () => {
+    playSwoosh();
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleThemeToggle = () => {
+    playToggle();
+    toggleTheme();
+  };
+
+  const handleSoundToggle = () => {
+    toggleSound();
+    // Play sound after toggle if enabling
+    if (!soundEnabled) {
+      setTimeout(() => playToggle(), 50);
     }
   };
 
@@ -59,6 +79,7 @@ const GlassNavbar = () => {
                 e.preventDefault();
                 scrollToSection('#home');
               }}
+              onMouseEnter={() => playHover()}
               className="text-2xl font-bold text-white hover:text-orange-400 transition-colors duration-300 cursor-pointer"
             >
               JM
@@ -74,6 +95,7 @@ const GlassNavbar = () => {
                     e.preventDefault();
                     scrollToSection(link.href);
                   }}
+                  onMouseEnter={() => playHover()}
                   className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 cursor-pointer group ${
                     activeSection === link.href.substring(1)
                       ? 'text-orange-400'
@@ -81,11 +103,9 @@ const GlassNavbar = () => {
                   }`}
                 >
                   <span className="relative z-10">{link.name}</span>
-                  {/* Liquid effect background */}
                   <span
                     className={`absolute inset-0 rounded-full bg-gradient-to-r from-orange-500/20 to-red-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm`}
                   />
-                  {/* Active indicator */}
                   {activeSection === link.href.substring(1) && (
                     <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-orange-400 rounded-full shadow-lg shadow-orange-400/50" />
                   )}
@@ -93,22 +113,36 @@ const GlassNavbar = () => {
               ))}
             </div>
 
-            {/* CTA Button */}
+            {/* CTA Button & Controls */}
             <div className="hidden md:flex items-center gap-3">
+              {/* Sound Toggle */}
               <button
-                onClick={toggleTheme}
-                className="p-2 text-orange-400 hover:text-orange-300 transition-colors duration-300 hover:scale-110"
+                onClick={handleSoundToggle}
+                onMouseEnter={() => playHover()}
+                className="p-2 text-orange-400 hover:text-orange-300 transition-all duration-300 hover:scale-110"
+                aria-label="Toggle sound"
+              >
+                {soundEnabled ? <Volume2 size={20} /> : <VolumeX size={20} />}
+              </button>
+              
+              {/* Theme Toggle */}
+              <button
+                onClick={handleThemeToggle}
+                onMouseEnter={() => playHover()}
+                className="p-2 text-orange-400 hover:text-orange-300 transition-all duration-300 hover:scale-110"
                 aria-label="Toggle theme"
               >
                 {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
               </button>
+              
               <a
                 href="#contact"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection('#contact');
                 }}
-                className="px-6 py-2 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-full font-medium hover:shadow-lg hover:shadow-orange-500/50 transition-all duration-300 hover:scale-105 cursor-pointer"
+                onMouseEnter={() => playHover()}
+                className="px-6 py-2 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-full font-medium hover:shadow-lg hover:shadow-orange-500/50 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
               >
                 Get In Touch
               </a>
@@ -116,7 +150,7 @@ const GlassNavbar = () => {
 
             {/* Mobile Menu Button */}
             <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              onClick={handleMobileMenuToggle}
               className="md:hidden p-2 text-white hover:text-orange-400 transition-colors duration-300"
               aria-label="Toggle menu"
             >
@@ -153,6 +187,20 @@ const GlassNavbar = () => {
               {link.name}
             </a>
           ))}
+          <div className="flex gap-4 mt-4">
+            <button
+              onClick={handleSoundToggle}
+              className="p-3 bg-gray-800/50 rounded-lg text-orange-400"
+            >
+              {soundEnabled ? <Volume2 size={20} /> : <VolumeX size={20} />}
+            </button>
+            <button
+              onClick={handleThemeToggle}
+              className="p-3 bg-gray-800/50 rounded-lg text-orange-400"
+            >
+              {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
+          </div>
           <a
             href="#contact"
             onClick={(e) => {
@@ -170,7 +218,7 @@ const GlassNavbar = () => {
       {isMobileMenuOpen && (
         <div
           className="fixed inset-0 bg-black/50 z-30 md:hidden"
-          onClick={() => setIsMobileMenuOpen(false)}
+          onClick={handleMobileMenuToggle}
         />
       )}
     </>
