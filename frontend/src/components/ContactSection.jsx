@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Send, Mail, User, MessageSquare, Github, Linkedin } from 'lucide-react';
 import { Parallax } from 'react-scroll-parallax';
 import { profileData } from '../data/mock';
+import { useSoundContext } from '../context/SoundContext';
 
 const ContactSection = () => {
   const [isVisible, setIsVisible] = useState(false);
