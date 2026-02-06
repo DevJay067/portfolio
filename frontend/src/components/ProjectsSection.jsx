@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { ExternalLink, Github, Calendar, CheckCircle2 } from 'lucide-react';
 import { Parallax } from 'react-scroll-parallax';
 import { projects } from '../data/mock';
+import { useSoundContext } from '../context/SoundContext';
 
 const ProjectsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
