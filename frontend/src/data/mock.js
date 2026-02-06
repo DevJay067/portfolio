@@ -8,7 +8,7 @@ export const profileData = {
   email: "jaymagar310@gmail.com",
   phone: "",
   location: "",
-  profileImage: "https://customer-assets.emergentagent.com/job_76521610-dcc5-45d9-8a05-3d388a49daac/artifacts/hpzt4615_WhatsApp%20Image%202026-02-06%20at%209.18.51%20PM.jpeg"
+  profileImage: "https://customer-assets.emergentagent.com/job_parallax-scroll-demo/artifacts/4z0malji_WhatsApp_Image_2026-02-06_at_9.18.51_PM-removebg-preview.png"
 };
 
 export const stats = [
