@@ -14,6 +14,7 @@ const ContactSection = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const sectionRef = useRef(null);
+  const { playClick, playHover, playSuccess, playTap } = useSoundContext();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
