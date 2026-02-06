@@ -38,6 +38,7 @@ const ContactSection = () => {
   }, []);
 
   const handleChange = (e) => {
+    playTap();
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -46,10 +47,12 @@ const ContactSection = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    playClick();
     setIsSubmitting(true);
     
     setTimeout(() => {
       console.log('Form submitted:', formData);
+      playSuccess();
       alert('Thank you for your message! I will get back to you soon.');
       setFormData({ name: '', email: '', subject: '', message: '' });
       setIsSubmitting(false);
