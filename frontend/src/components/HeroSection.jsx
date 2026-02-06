@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight, Code2, Sparkles } from 'lucide-react';
+import { Parallax } from 'react-scroll-parallax';
 import { profileData } from '../data/mock';
 
 const HeroSection = () => {
@@ -74,141 +75,163 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black dark:from-black dark:via-gray-900 dark:to-black"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-black to-gray-900"
     >
-      {/* Animated background */}
+      {/* Animated background with parallax */}
       <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-cyan-500 rounded-full filter blur-3xl opacity-20 animate-pulse" />
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-teal-500 rounded-full filter blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }} />
+        <Parallax speed={-10}>
+          <div className="absolute top-20 left-20 w-72 h-72 bg-orange-500 rounded-full filter blur-3xl opacity-20 animate-pulse" />
+        </Parallax>
+        <Parallax speed={-15}>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-red-500 rounded-full filter blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }} />
+        </Parallax>
+        <Parallax speed={-5}>
+          <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-amber-500 rounded-full filter blur-3xl opacity-10 animate-pulse" style={{ animationDelay: '2s' }} />
+        </Parallax>
       </div>
 
-      {/* Floating 3D shapes */}
+      {/* Floating 3D shapes with parallax */}
       <div
         ref={floatingRef}
         className="absolute inset-0 pointer-events-none transition-transform duration-300 ease-out"
       >
-        <div className="absolute top-1/4 right-1/4 w-32 h-32 border-2 border-cyan-400/30 rounded-lg transform rotate-45 animate-spin-slow" />
-        <div className="absolute bottom-1/3 left-1/4 w-24 h-24 border-2 border-teal-400/30 rounded-full animate-bounce-slow" />
-        <div className="absolute top-1/2 right-1/3 w-16 h-16 border-2 border-cyan-400/20 rounded-lg transform -rotate-12" style={{ animation: 'spin-slow 15s linear infinite reverse' }} />
-        <div className="absolute bottom-1/4 right-1/2 w-20 h-20 border border-teal-400/20 rounded-full" style={{ animation: 'bounce-slow 4s ease-in-out infinite' }} />
+        <Parallax speed={5} rotate={[0, 360]}>
+          <div className="absolute top-1/4 right-1/4 w-32 h-32 border-2 border-orange-400/30 rounded-lg transform rotate-45 animate-spin-slow" />
+        </Parallax>
+        <Parallax speed={-5}>
+          <div className="absolute bottom-1/3 left-1/4 w-24 h-24 border-2 border-red-400/30 rounded-full animate-bounce-slow" />
+        </Parallax>
+        <Parallax speed={10}>
+          <div className="absolute top-1/2 right-1/3 w-16 h-16 border-2 border-orange-400/20 rounded-lg transform -rotate-12" style={{ animation: 'spin-slow 15s linear infinite reverse' }} />
+        </Parallax>
+        <Parallax speed={-8}>
+          <div className="absolute bottom-1/4 right-1/2 w-20 h-20 border border-amber-400/20 rounded-full" style={{ animation: 'bounce-slow 4s ease-in-out infinite' }} />
+        </Parallax>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
         {/* Text Content */}
-        <div className="space-y-6 animate-fade-in-up">
-          <div className="inline-block px-4 py-2 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-cyan-400 text-sm font-medium backdrop-blur-sm">
-            {profileData.title}
-          </div>
-          
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-            <span className="text-white">Hello, I'm </span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400 mt-2">
-              {profileData.name}
-            </span>
-          </h1>
-
-          {/* Typing animation */}
-          <div className="flex items-center gap-2 text-xl text-cyan-400 font-medium">
-            <Code2 size={24} className="animate-pulse" />
-            <span className="min-h-[30px]">{typedText}</span>
-            <span className="inline-block w-0.5 h-6 bg-cyan-400 animate-pulse" />
-          </div>
-
-          <p className="text-lg text-gray-300 leading-relaxed max-w-xl">
-            {profileData.description}
-          </p>
-
-          {/* Tech stack badges */}
-          <div className="flex flex-wrap gap-3">
-            {['React', 'Python', 'AI/ML', 'Full-Stack'].map((tech, index) => (
-              <div
-                key={tech}
-                className="px-4 py-2 bg-black/50 border border-cyan-500/30 rounded-lg text-cyan-400 text-sm font-medium hover:border-cyan-500/50 hover:bg-cyan-500/10 transition-all duration-300 hover:scale-105"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <Sparkles size={14} className="inline mr-2" />
-                {tech}
-              </div>
-            ))}
-          </div>
-
-          <div className="flex flex-wrap gap-4 pt-4">
-            <button
-              onClick={scrollToContact}
-              className="group px-8 py-4 bg-gradient-to-r from-cyan-500 to-teal-500 text-white rounded-full font-medium hover:shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-105 flex items-center gap-2"
-            >
-              Get In Touch
-              <ArrowRight className="group-hover:translate-x-1 transition-transform duration-300" size={20} />
-            </button>
+        <Parallax speed={-5}>
+          <div className="space-y-6 animate-fade-in-up">
+            <div className="inline-block px-4 py-2 bg-orange-500/10 border border-orange-500/30 rounded-full text-orange-400 text-sm font-medium backdrop-blur-sm">
+              {profileData.title}
+            </div>
             
-            <a
-              href="#projects"
-              onClick={(e) => {
-                e.preventDefault();
-                document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="px-8 py-4 border-2 border-cyan-500/50 text-cyan-400 rounded-full font-medium hover:bg-cyan-500/10 hover:border-cyan-500 transition-all duration-300 hover:scale-105"
-            >
-              View Projects
-            </a>
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+              <span className="text-white">Hello, I'm </span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-red-500 to-amber-400 mt-2">
+                {profileData.name}
+              </span>
+            </h1>
+
+            {/* Typing animation */}
+            <div className="flex items-center gap-2 text-xl text-orange-400 font-medium">
+              <Code2 size={24} className="animate-pulse" />
+              <span className="min-h-[30px]">{typedText}</span>
+              <span className="inline-block w-0.5 h-6 bg-orange-400 animate-pulse" />
+            </div>
+
+            <p className="text-lg text-gray-300 leading-relaxed max-w-xl">
+              {profileData.description}
+            </p>
+
+            {/* Tech stack badges */}
+            <div className="flex flex-wrap gap-3">
+              {['React', 'Python', 'AI/ML', 'Full-Stack'].map((tech, index) => (
+                <div
+                  key={tech}
+                  className="px-4 py-2 bg-gray-800/50 border border-orange-500/30 rounded-lg text-orange-400 text-sm font-medium hover:border-orange-500/50 hover:bg-orange-500/10 transition-all duration-300 hover:scale-105"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <Sparkles size={14} className="inline mr-2" />
+                  {tech}
+                </div>
+              ))}
+            </div>
+
+            <div className="flex flex-wrap gap-4 pt-4">
+              <button
+                onClick={scrollToContact}
+                className="group px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-full font-medium hover:shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 hover:scale-105 flex items-center gap-2"
+              >
+                Get In Touch
+                <ArrowRight className="group-hover:translate-x-1 transition-transform duration-300" size={20} />
+              </button>
+              
+              <a
+                href="#projects"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="px-8 py-4 border-2 border-orange-500/50 text-orange-400 rounded-full font-medium hover:bg-orange-500/10 hover:border-orange-500 transition-all duration-300 hover:scale-105"
+              >
+                View Projects
+              </a>
+            </div>
           </div>
-        </div>
+        </Parallax>
 
         {/* 3D Profile Card */}
-        <div className="relative animate-fade-in-up max-w-md mx-auto" style={{ animationDelay: '0.2s' }}>
-          <div className="relative group perspective-1000">
-            {/* Animated rings */}
-            <div className="absolute inset-0 -z-10">
-              <div className="absolute inset-0 rounded-full border-2 border-cyan-500/20 animate-ping" style={{ animationDuration: '3s' }} />
-              <div className="absolute inset-8 rounded-full border-2 border-teal-500/20 animate-ping" style={{ animationDuration: '4s', animationDelay: '1s' }} />
-            </div>
+        <Parallax speed={5}>
+          <div className="relative animate-fade-in-up max-w-md mx-auto" style={{ animationDelay: '0.2s' }}>
+            <div className="relative group perspective-1000">
+              {/* Animated rings */}
+              <div className="absolute inset-0 -z-10">
+                <div className="absolute inset-0 rounded-full border-2 border-orange-500/20 animate-ping" style={{ animationDuration: '3s' }} />
+                <div className="absolute inset-8 rounded-full border-2 border-red-500/20 animate-ping" style={{ animationDuration: '4s', animationDelay: '1s' }} />
+              </div>
 
-            {/* Glowing effect */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500 to-teal-500 rounded-3xl opacity-20 blur-3xl group-hover:opacity-40 transition-opacity duration-700 animate-pulse" />
-            
-            {/* Card */}
-            <div 
-              ref={imageRef}
-              className="relative bg-gradient-to-br from-gray-900/60 to-black/60 backdrop-blur-2xl border-2 border-cyan-500/30 rounded-3xl p-2 transition-all duration-300 ease-out w-fit mx-auto"
-              style={{
-                transformStyle: 'preserve-3d',
-                willChange: 'transform'
-              }}
-            >
-              {/* Decorative corners */}
-              <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-cyan-400 rounded-tl-xl" />
-              <div className="absolute -top-2 -right-2 w-8 h-8 border-t-2 border-r-2 border-teal-400 rounded-tr-xl" />
-              <div className="absolute -bottom-2 -left-2 w-8 h-8 border-b-2 border-l-2 border-teal-400 rounded-bl-xl" />
-              <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-cyan-400 rounded-br-xl" />
+              {/* Glowing effect */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-orange-500 to-red-500 rounded-3xl opacity-20 blur-3xl group-hover:opacity-40 transition-opacity duration-700 animate-pulse" />
+              
+              {/* Card */}
+              <div 
+                ref={imageRef}
+                className="relative bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-2xl border-2 border-orange-500/30 rounded-3xl p-2 transition-all duration-300 ease-out w-fit mx-auto"
+                style={{
+                  transformStyle: 'preserve-3d',
+                  willChange: 'transform'
+                }}
+              >
+                {/* Decorative corners */}
+                <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-orange-400 rounded-tl-xl" />
+                <div className="absolute -top-2 -right-2 w-8 h-8 border-t-2 border-r-2 border-red-400 rounded-tr-xl" />
+                <div className="absolute -bottom-2 -left-2 w-8 h-8 border-b-2 border-l-2 border-red-400 rounded-bl-xl" />
+                <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-orange-400 rounded-br-xl" />
 
-              <div className="relative rounded-2xl overflow-hidden border-4 border-cyan-500/40 shadow-2xl shadow-cyan-500/30">
-                {/* Scan line effect */}
-                <div className="absolute inset-0 z-10 pointer-events-none">
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-500/10 to-transparent animate-scan" />
+                <div className="relative rounded-2xl overflow-hidden border-4 border-orange-500/40 shadow-2xl shadow-orange-500/30">
+                  {/* Scan line effect */}
+                  <div className="absolute inset-0 z-10 pointer-events-none">
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-orange-500/10 to-transparent animate-scan" />
+                  </div>
+
+                  <img
+                    src={profileData.profileImage}
+                    alt={profileData.name}
+                    className="w-full h-full object-cover object-center block"
+                    style={{ 
+                      width: '400px',
+                      height: '400px',
+                      mixBlendMode: 'normal',
+                      backgroundColor: 'transparent'
+                    }}
+                  />
+
+                  {/* Gradient overlay to blend black edges */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-gray-900/30" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-gray-900/40 via-transparent to-gray-900/40" />
                 </div>
-
-                <img
-                  src={profileData.profileImage}
-                  alt={profileData.name}
-                  className="w-full h-full object-cover object-center block"
-                  style={{ 
-                    width: '400px',
-                    height: '400px'
-                  }}
-                />
-
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
               </div>
             </div>
           </div>
-        </div>
+        </Parallax>
       </div>
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-cyan-400/50 rounded-full flex items-start justify-center p-2">
-          <div className="w-1 h-3 bg-cyan-400 rounded-full animate-scroll" />
+        <div className="w-6 h-10 border-2 border-orange-400/50 rounded-full flex items-start justify-center p-2">
+          <div className="w-1 h-3 bg-orange-400 rounded-full animate-scroll" />
         </div>
       </div>
     </section>

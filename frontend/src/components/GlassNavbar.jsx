@@ -43,11 +43,11 @@ const GlassNavbar = () => {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? 'backdrop-blur-xl bg-black/30 dark:bg-black/30 shadow-lg shadow-cyan-500/10'
+            ? 'backdrop-blur-xl bg-gray-900/80 shadow-lg shadow-orange-500/10'
             : 'bg-transparent'
         }`}
         style={{
-          borderBottom: isScrolled ? '1px solid rgba(0, 217, 255, 0.1)' : 'none',
+          borderBottom: isScrolled ? '1px solid rgba(255, 87, 34, 0.2)' : 'none',
         }}
       >
         <div className="max-w-7xl mx-auto px-6 py-4">
@@ -59,7 +59,7 @@ const GlassNavbar = () => {
                 e.preventDefault();
                 scrollToSection('#home');
               }}
-              className="text-2xl font-bold text-white hover:text-cyan-400 transition-colors duration-300 cursor-pointer"
+              className="text-2xl font-bold text-white hover:text-orange-400 transition-colors duration-300 cursor-pointer"
             >
               JM
             </a>
@@ -76,18 +76,18 @@ const GlassNavbar = () => {
                   }}
                   className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 cursor-pointer group ${
                     activeSection === link.href.substring(1)
-                      ? 'text-cyan-400'
+                      ? 'text-orange-400'
                       : 'text-gray-300 hover:text-white'
                   }`}
                 >
                   <span className="relative z-10">{link.name}</span>
                   {/* Liquid effect background */}
                   <span
-                    className={`absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500/20 to-teal-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm`}
+                    className={`absolute inset-0 rounded-full bg-gradient-to-r from-orange-500/20 to-red-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm`}
                   />
                   {/* Active indicator */}
                   {activeSection === link.href.substring(1) && (
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-cyan-400 rounded-full shadow-lg shadow-cyan-400/50" />
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-orange-400 rounded-full shadow-lg shadow-orange-400/50" />
                   )}
                 </a>
               ))}
@@ -97,7 +97,7 @@ const GlassNavbar = () => {
             <div className="hidden md:flex items-center gap-3">
               <button
                 onClick={toggleTheme}
-                className="p-2 text-cyan-400 hover:text-cyan-300 transition-colors duration-300 hover:scale-110"
+                className="p-2 text-orange-400 hover:text-orange-300 transition-colors duration-300 hover:scale-110"
                 aria-label="Toggle theme"
               >
                 {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
@@ -108,7 +108,7 @@ const GlassNavbar = () => {
                   e.preventDefault();
                   scrollToSection('#contact');
                 }}
-                className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-teal-500 text-white rounded-full font-medium hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-105 cursor-pointer"
+                className="px-6 py-2 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-full font-medium hover:shadow-lg hover:shadow-orange-500/50 transition-all duration-300 hover:scale-105 cursor-pointer"
               >
                 Get In Touch
               </a>
@@ -117,7 +117,7 @@ const GlassNavbar = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 text-white hover:text-cyan-400 transition-colors duration-300"
+              className="md:hidden p-2 text-white hover:text-orange-400 transition-colors duration-300"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -128,11 +128,11 @@ const GlassNavbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-black/95 backdrop-blur-xl z-40 transform transition-transform duration-300 md:hidden ${
+        className={`fixed top-0 right-0 h-full w-64 bg-gray-900/95 backdrop-blur-xl z-40 transform transition-transform duration-300 md:hidden ${
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
         style={{
-          borderLeft: '1px solid rgba(0, 217, 255, 0.2)',
+          borderLeft: '1px solid rgba(255, 87, 34, 0.2)',
         }}
       >
         <div className="flex flex-col space-y-1 p-6 mt-20">
@@ -146,7 +146,7 @@ const GlassNavbar = () => {
               }}
               className={`px-4 py-3 text-base font-medium rounded-lg transition-all duration-300 cursor-pointer ${
                 activeSection === link.href.substring(1)
-                  ? 'text-cyan-400 bg-cyan-500/10'
+                  ? 'text-orange-400 bg-orange-500/10'
                   : 'text-gray-300 hover:text-white hover:bg-white/5'
               }`}
             >
@@ -159,7 +159,7 @@ const GlassNavbar = () => {
               e.preventDefault();
               scrollToSection('#contact');
             }}
-            className="mt-4 px-6 py-3 bg-gradient-to-r from-cyan-500 to-teal-500 text-white rounded-full font-medium text-center hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 cursor-pointer"
+            className="mt-4 px-6 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-full font-medium text-center hover:shadow-lg hover:shadow-orange-500/50 transition-all duration-300 cursor-pointer"
           >
             Get In Touch
           </a>
