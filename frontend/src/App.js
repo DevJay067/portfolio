@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import { ThemeProvider } from './context/ThemeContext';
+import { SoundProvider } from './context/SoundContext';
 import ParticleBackground from './components/ParticleBackground';
 import GlassNavbar from './components/GlassNavbar';
 import HeroSection from './components/HeroSection';
@@ -17,18 +18,20 @@ function App() {
   return (
     <ParallaxProvider>
       <ThemeProvider>
-        <div className="App">
-          <ParticleBackground />
-          <GlassNavbar />
-          <HeroSection />
-          <StatsSection />
-          <AboutSection />
-          <SkillsSection />
-          <ProjectsSection />
-          <ExperienceSection />
-          <ContactSection />
-          <Footer />
-        </div>
+        <SoundProvider>
+          <div className="App">
+            <ParticleBackground />
+            <GlassNavbar />
+            <HeroSection />
+            <StatsSection />
+            <AboutSection />
+            <SkillsSection />
+            <ProjectsSection />
+            <ExperienceSection />
+            <ContactSection />
+            <Footer />
+          </div>
+        </SoundProvider>
       </ThemeProvider>
     </ParallaxProvider>
   );
