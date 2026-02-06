@@ -13,9 +13,9 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative bg-black dark:bg-black border-t border-cyan-500/20 overflow-hidden">
+    <footer className="relative bg-black border-t border-orange-500/20 overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-t from-cyan-500/5 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-orange-500/5 to-transparent pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-12">
         <div className="grid md:grid-cols-3 gap-12 mb-8">
@@ -30,7 +30,7 @@ const Footer = () => {
                 href="https://github.com/DevJay067"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-cyan-500/10 rounded-lg hover:bg-cyan-500/20 text-cyan-400 hover:text-cyan-300 transition-all duration-300 hover:scale-110"
+                className="p-2 bg-orange-500/10 rounded-lg hover:bg-orange-500/20 text-orange-400 hover:text-orange-300 transition-all duration-300 hover:scale-110"
                 aria-label="Github"
               >
                 <Github size={20} />
@@ -39,14 +39,14 @@ const Footer = () => {
                 href="https://www.linkedin.com/in/jay-magar-5ba92b369/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-cyan-500/10 rounded-lg hover:bg-cyan-500/20 text-cyan-400 hover:text-cyan-300 transition-all duration-300 hover:scale-110"
+                className="p-2 bg-orange-500/10 rounded-lg hover:bg-orange-500/20 text-orange-400 hover:text-orange-300 transition-all duration-300 hover:scale-110"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={20} />
               </a>
               <a
                 href={`mailto:${profileData.email}`}
-                className="p-2 bg-cyan-500/10 rounded-lg hover:bg-cyan-500/20 text-cyan-400 hover:text-cyan-300 transition-all duration-300 hover:scale-110"
+                className="p-2 bg-orange-500/10 rounded-lg hover:bg-orange-500/20 text-orange-400 hover:text-orange-300 transition-all duration-300 hover:scale-110"
                 aria-label="Email"
               >
                 <Mail size={20} />
@@ -66,7 +66,7 @@ const Footer = () => {
                       e.preventDefault();
                       scrollToSection(link.href);
                     }}
-                    className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 text-sm cursor-pointer"
+                    className="text-gray-400 hover:text-orange-400 transition-colors duration-300 text-sm cursor-pointer"
                   >
                     {link.name}
                   </a>
@@ -82,7 +82,7 @@ const Footer = () => {
               <li>
                 <a
                   href={`mailto:${profileData.email}`}
-                  className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 text-sm block"
+                  className="text-gray-400 hover:text-orange-400 transition-colors duration-300 text-sm block"
                 >
                   {profileData.email}
                 </a>
@@ -92,7 +92,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-cyan-500/10">
+        <div className="pt-8 border-t border-orange-500/10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-gray-400 text-sm flex items-center gap-2">
               Made with <Heart className="text-red-500 fill-red-500" size={16} /> by {profileData.name}
